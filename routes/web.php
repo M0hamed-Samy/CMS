@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Models\Service;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -16,13 +18,13 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     if (Auth::check()) { // لو الشخص مسجل دخول
         if (Auth::user()->role === 'admin') {
-            return redirect()->route('admin.dashboard'); 
+            return redirect()->route('admin.dashboard');
         } else {
-            return redirect()->route('user.index'); 
+            return redirect()->route('user.index');
         }
     }
 
-    return view('user.index'); 
+    return view('user.index');
 });
 
 /////////////////////////////////////////////////////////
@@ -35,8 +37,18 @@ Route::get('/', function () {
 
 
 /////////////////////////////////////////////////////////
-// admin routes
+// public services routes
 /////////////////////////////////////////////////////////
+Route::get('/services', function () {
+    $services = Service::all()->latest()->simplePaginate(1);
+
+    return view('user.service.index', [
+        'services' => $services
+    ]);
+});
+
+
+
 // Show the login form
 Route::get('admin/login', [AuthenticatedSessionController::class, 'create'])
     ->name('login');
@@ -57,10 +69,25 @@ Route::middleware('auth')->group(function () {
 
 });
 
+
+/////////////////////////////////////////////////////////
+// admin routes
+/////////////////////////////////////////////////////////
 // Admin-only routes
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.services.')->group(function () {
+    Route::get('/services', [\App\Http\Controllers\Admin\ServiceController::class, 'index'])->name('index');
+    Route::get('/services/create', [\App\Http\Controllers\Admin\ServiceController::class, 'create'])->name('create');
+    Route::post('/services', [\App\Http\Controllers\Admin\ServiceController::class, 'store'])->name('store');
+    Route::get('/services/{service}/edit', [\App\Http\Controllers\Admin\ServiceController::class, 'edit'])->name('edit');
+    Route::put('/services/{service}', [\App\Http\Controllers\Admin\ServiceController::class, 'update'])->name('update');
+    Route::delete('/services/{service}', [\App\Http\Controllers\Admin\ServiceController::class, 'destroy'])->name('destroy');
+});
+
 Route::middleware(['auth', 'role:admin',])->group(function () {
 
 
+
+    // Admin dashboard
     Route::get('/admin/dashboard', function () {
         return view('admin.dashboard.index');
     })->middleware('verified')->name('admin.dashboard');

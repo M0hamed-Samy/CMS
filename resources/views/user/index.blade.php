@@ -84,7 +84,7 @@
 
 
                     <!-- Department Block -->
-                    {{-- @foreach ($services as $service)
+                    @foreach ($services as $service)
                         <div class="department-block">
                             <div class="inner-box">
                                 <div class="upper-box">
@@ -99,7 +99,7 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach --}}
+                    @endforeach
 
 
 
