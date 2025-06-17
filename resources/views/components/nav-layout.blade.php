@@ -1,4 +1,8 @@
+
+
 <header class="main-header">
+
+
         
 
         <!-- Header Upper -->
@@ -7,7 +11,7 @@
                 <div class="auto-container clearfix">
                     <!--Info-->
                     <div class="logo-outer">
-                        <div class="logo"><a href="/"><img src="images/logo.png" alt="" title=""></a></div>
+                        <div class="logo"><a href="/"><img src="{{ asset('images/logo.png') }}" alt="" title=""></a></div>
                     </div>
 
                     <!--Nav Box-->
@@ -23,44 +27,16 @@
 
                             <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li><a href="/">الرئيسية</a></li>
-									<li class="dropdown"><a href="/about">من نحن</a>
+                                    <li><a href="{{ url('/') }}">الرئيسية</a></li>
+									<li class="dropdown"><a href="#">الخدمات</a>
                                         <ul>
-											<li ><a href="/faq">اسئلة شائعة</a></li>
-											<li><a href="/services">خدماتنا</a></li>
-											<li><a href="gallery.html">معرض الصور</a></li>
+                                            @foreach($services as $service)
+											<li ><a href="{{ route('services.show', $service->id) }}">{{ $service->main_title }}</a></li>
+											@endforeach
                                         </ul>
                                     </li>
-									<li class="dropdown has-mega-menu"><a href="/services">الخدمات</a>
-										<div class="mega-menu">
-											<div class="mega-menu-bar row clearfix">
-												<div class="column col-md-3 col-xs-12">
-													<h3>About Us</h3>
-													<ul>
-														<li><a href="about.html">About Us</a></li>
-														<li><a href="team.html">Our Team</a></li>
-														<li><a href="faq.html">Faq</a></li>
-														<li><a href="services.html">Services</a></li>
-													</ul>
-												</div>
-												<div class="column col-md-3 col-xs-12">
-													<h3>Doctors</h3>
-													<ul>
-														<li><a href="doctors.html">Doctors</a></li>
-														<li><a href="doctors-detail.html">Doctors Detail</a></li>
-													</ul>
-												</div>
-												<div class="column col-md-3 col-xs-12">
-													<h3>Blog</h3>
-													<ul>
-														<li><a href="blog.html">Our Blog</a></li>
-														<li><a href="blog-classic.html">Blog Classic</a></li>
-														<li><a href="blog-detail.html">Blog Detail</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</li>
+                                    <li><a href="#">فيدوهات</a></li>
+
 									<li ><a href="/doctor">عن الدكتور</a>
                                         
                                     </li>
@@ -92,7 +68,7 @@
         	<div class="auto-container clearfix">
             	<!--Logo-->
             	<div class="logo pull-left">
-                	<a href="/" class="img-responsive"><img src="images/logo-small.png" alt="" title=""></a>
+                	<a href="/" class="img-responsive"><img src="{{ asset('images/logo-small.png') }}" alt="" title=""></a>
                 </div>
 
 				<!--Right Col-->
@@ -116,7 +92,7 @@
 
             <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
             <nav class="menu-box">
-            	<div class="nav-logo"><a href="/"><img src="images/nav-logo.png" alt="" title=""></a></div>
+            	<div class="nav-logo"><a href="/"><img src="{{ asset('images/nav-logo.png') }}" alt="" title=""></a></div>
 
                 <ul class="navigation clearfix"><!--Keep This Empty / Menu will come through Javascript--></ul>
             </nav>

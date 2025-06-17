@@ -17,7 +17,8 @@
                 <!-- Swiper -->
                 <div class="swiper-wrapper">
 
-                    <div class="swiper-slide slide" style="background-image:url(images/main-slider/1.jpg)">
+                    <section class="swiper-slide slide" style="background-image: url('{{ asset('images/main-slider/1.jpg') }}');">
+
                         <div class="auto-container">
                             <div class="content clearfix">
                                 <div class="title" style="color:whitesmoke !important">مرحبًا بكم في عيادة الدكتور دياب
@@ -36,7 +37,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
 
                 </div>
@@ -49,7 +50,7 @@
         </section>
         <!-- End Main Slider -->
 
-        <!-- Department Section -->
+        <!-- Services Section -->
         <section class="department-section">
             <div class="auto-container">
 
@@ -62,39 +63,21 @@
                 <div class="services-carousel owl-carousel owl-theme">
 
                     <!-- Department Block -->
-                    {{-- <div class="department-block">
-                        <div class="inner-box">
-                            <div class="upper-box">
-                                <div class="icon">
-                                    <img src="images/services/botox.png" alt="Cosmetic Surgery Icon"
-                                        style="width:60px; height:60px;">
-                                </div>
-                                <h3><a href="#">جراحة تجميل الوجه</a></h3>
-                            </div>
-                            <div class="text">
-                                تشمل هذه الجراحة تجميل العيون والأنف، وتهدف إلى تحسين المظهر العام للوجه وتعزيز الثقة
-                                بالنفس.
-                            </div>
-                            <div class="read-outer">
-                                <a href="#" class="read-more">اقرأ المزيد <span
-                                        class="icon fas fa-angle-double-right"></span></a>
-                            </div>
-                        </div>
-                    </div> --}}
-
-
-                    <!-- Department Block -->
                     @foreach ($services as $service)
                         <div class="department-block">
                             <div class="inner-box">
                                 <div class="upper-box">
-                                    <div class="icon flaticon-brain"></div>
-                                    <!-- You can make this dynamic too if you have an icon field -->
-                                    <h3><a href="/services/{{ 'id' }}">{{ $service['name'] }}</a></h3>
+                                    <div class="icon">
+                                        <img src="{{ asset('storage/' . $service->icon) }}" alt="Service Icon"
+                                            alt="Cosmetic Surgery Icon" style="width:60px; height:60px;">
+                                    </div>
+                                    <h3><a href="#">{{ $service->main_title }}</a></h3>
                                 </div>
-                                <div class="text">{{ $service['description'] }}</div>
+                                <div class="text">
+                                    {{ $service->main_description }}
+                                </div>
                                 <div class="read-outer">
-                                    <a href="#" class="read-more">Read More <span
+                                    <a href="{{ url('/services/'.$service->id) }}" class="read-more">اقرأ المزيد <span
                                             class="icon fas fa-angle-double-right"></span></a>
                                 </div>
                             </div>
@@ -102,8 +85,6 @@
                     @endforeach
 
 
-
-                  
 
                 </div>
 
@@ -127,153 +108,21 @@
                 <div class="content-column">
                     <div class="content-box">
                         <div class="sec-title">
-                            <h2>من هو دكتور دياب؟</h2>
+                            <h2>نبذة مختصرة</h2>
                             <div class="separator style-two"></div>
                         </div>
                         <div class="text">
-                            <p>شهادة واستشاري أول.</p>
-                            <p>موقعه</p>
-
+                            <p>استشارى جراحة التجميل</p>
+                            <p> (FRCS) زميل كلية الجراحين الملكية ببريطانيا</p>
+                            <p>حاصل على ماجستير الجراحة من كلية الطب – جامعة عين شمس</p>
                         </div>
-                        <div class="row clearfix">
-                            <div class="column col-lg-6 col-md-6 col-sm-12">
-                                <ul class="list-style-one">
-                                    <li><span class="icon flaticon-medical-stethoscope-variant"></span>Medical Treatment
-                                    </li>
-                                    <li><span class="icon flaticon-doctor"></span>Qualified Doctors</li>
-                                </ul>
-                            </div>
-                            <div class="column col-lg-6 col-md-6 col-sm-12">
-                                <ul class="list-style-one">
-                                    <li><span class="icon flaticon-ambulance-side-view"></span>Emergency Help</li>
-                                    <li><span class="icon flaticon-medical-kit"></span>Medical Professionals</li>
-                                </ul>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section class="services-section">
-            <div class="auto-container">
-
-                <!-- Sec Title -->
-                <div class="sec-title centered">
-                    <h2>Best Health Services</h2>
-                    <div class="separator"></div>
-                </div>
-
-                <div class="row clearfix">
-
-                    <!-- Left Column -->
-                    <div class="left-column pull-left col-lg-4 col-md-12 col-sm-12">
-                        <div class="inner-column">
-
-                            <!-- Service Block -->
-                            <div class="service-block">
-                                <div class="inner-box wow fadeInLeft" data-wow-delay="0ms"
-                                    data-wow-duration="1500ms">
-                                    <div class="icon-box">
-                                        <span class="icon flaticon-doctor-stethoscope"></span>
-                                    </div>
-                                    <h3><a href="doctors-detail.html">Outdoor Checkup</a></h3>
-                                    <div class="text">We provide best service for our cline. <br> Now place take it.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Service Block -->
-                            <div class="service-block">
-                                <div class="inner-box wow fadeInLeft" data-wow-delay="250ms"
-                                    data-wow-duration="1500ms">
-                                    <div class="icon-box">
-                                        <span class="icon flaticon-operating-room"></span>
-                                    </div>
-                                    <h3><a href="doctors-detail.html">Operation Theater</a></h3>
-                                    <div class="text">We provide best service for our cline. Now place take it.</div>
-                                </div>
-                            </div>
-
-                            <!-- Service Block -->
-                            <div class="service-block">
-                                <div class="inner-box wow fadeInLeft" data-wow-delay="500ms"
-                                    data-wow-duration="1500ms">
-                                    <div class="icon-box">
-                                        <span class="icon flaticon-van"></span>
-                                    </div>
-                                    <h3><a href="doctors-detail.html">Emergency Care</a></h3>
-                                    <div class="text">We provide best service for our cline. <br> Now place take it.
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Circles Column -->
-                    <div class="circles-column col-lg-4 col-md-12 col-sm-12">
-                        <div class="inner-column">
-
-                            <div class="circles">
-                                <div class="circle-one"></div>
-                                <div class="circle-two"></div>
-                                <div class="circle-three"></div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- Right Column -->
-                    <div class="right-column pull-right col-lg-4 col-md-12 col-sm-12">
-                        <div class="inner-column">
-
-                            <!-- Service Block -->
-                            <div class="service-block-two">
-                                <div class="inner-box wow fadeInRight" data-wow-delay="0ms"
-                                    data-wow-duration="1500ms">
-                                    <div class="icon-box">
-                                        <span class="icon flaticon-water"></span>
-                                    </div>
-                                    <h3><a href="doctors-detail.html">Blood Test</a></h3>
-                                    <div class="text">We provide best service for our cline. <br> Now place take it.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Service Block -->
-                            <div class="service-block-two">
-                                <div class="inner-box wow fadeInRight" data-wow-delay="250ms"
-                                    data-wow-duration="1500ms">
-                                    <div class="icon-box">
-                                        <span class="icon flaticon-pharmacy"></span>
-                                    </div>
-                                    <h3><a href="doctors-detail.html">Pharmacy Support</a></h3>
-                                    <div class="text">We provide best service for our cline. Now place take it.</div>
-                                </div>
-                            </div>
-
-                            <!-- Service Block -->
-                            <div class="service-block-two">
-                                <div class="inner-box wow fadeInRight" data-wow-delay="500ms"
-                                    data-wow-duration="1500ms">
-                                    <div class="icon-box">
-                                        <span class="icon flaticon-nurse"></span>
-                                    </div>
-                                    <h3><a href="doctors-detail.html">24/7 Service</a></h3>
-                                    <div class="text">We provide best service for our cline. <br> Now place take it.
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
+        
 
         <!-- Counter Section -->
         <section class="counter-section" style="background-image: url(images/background/pattern-3.png)">
@@ -283,53 +132,33 @@
                 <div class="fact-counter">
                     <div class="row clearfix">
 
-                        <!--Column-->
-                        <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <div class="content">
-                                    <div class="count-outer count-box">
-                                        <span class="count-text" data-speed="2500" data-stop="2350">0</span>
-                                    </div>
-                                    <h4 class="counter-title">Satisfied Patients</h4>
-                                </div>
-                            </div>
-                        </div>
+                       
 
                         <!--Column-->
-                        <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+                        <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
                             <div class="inner wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
                                 <div class="content">
                                     <div class="count-outer count-box alternate">
-                                        +<span class="count-text" data-speed="3000" data-stop="350">0</span>
+                                        +<span class="count-text" data-speed="3000" data-stop="1000">0</span>
                                     </div>
-                                    <h4 class="counter-title">Doctor’s Team</h4>
+                                    <h4 class="counter-title">عملية</h4>
                                 </div>
                             </div>
                         </div>
 
                         <!--Column-->
-                        <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+                        <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
                             <div class="inner wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
                                 <div class="content">
                                     <div class="count-outer count-box">
-                                        <span class="count-text" data-speed="3000" data-stop="2150">0</span>
+                                        +<span class="count-text" data-speed="3000" data-stop="35">0</span>
                                     </div>
-                                    <h4 class="counter-title">Success Mission</h4>
+                                    <h4 class="counter-title">سنة خبرة</h4>
                                 </div>
                             </div>
                         </div>
 
-                        <!--Column-->
-                        <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
-                            <div class="inner wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
-                                <div class="content">
-                                    <div class="count-outer count-box">
-                                        +<span class="count-text" data-speed="2500" data-stop="225">0</span>
-                                    </div>
-                                    <h4 class="counter-title">Successfull Surgeries</h4>
-                                </div>
-                            </div>
-                        </div>
+                        
 
                     </div>
                 </div>
@@ -499,7 +328,7 @@
             <div class="auto-container">
                 <!-- Sec Title -->
                 <div class="sec-title centered">
-                    <h2>What Patients Saying</h2>
+                    <h2>آراء عملائنا</h2>
                     <div class="separator"></div>
                 </div>
                 <div class="testimonial-outer" style="background-image: url(images/background/pattern-4.png)">
@@ -511,9 +340,7 @@
                         <div class="testimonial-block">
                             <div class="inner-box">
                                 <div class="quote-icon flaticon-quote"></div>
-                                <div class="text">Medical Centre is a great place to get all of your medical needs. I
-                                    came in for a check up and did not wait more than 5 minutes before I was seen. I can
-                                    only imagine the type of service you get for more serious issues. Thanks!</div>
+                                <div class="text">تسلم ايديك ي دكتور ربنا يباركلك بجد العمليه ملهاش اي اثر خالص و بصراحه انت كنت خايف منها بس حضرتك طمنتي و الحمدالله اني وقعت تحت ايديك ♥️♥️</div>
                             </div>
                         </div>
 
@@ -521,9 +348,8 @@
                         <div class="testimonial-block">
                             <div class="inner-box">
                                 <div class="quote-icon flaticon-quote"></div>
-                                <div class="text">Medical Centre is a great place to get all of your medical needs. I
-                                    came in for a check up and did not wait more than 5 minutes before I was seen. I can
-                                    only imagine the type of service you get for more serious issues. Thanks!</div>
+                                <div class="text">ربنا يباركلك يا دكتور من افضل الدكاتره اللي ممكن اي حد يتعامل معاهم ما شاء الله ♥️
+                                </div>
                             </div>
                         </div>
 
@@ -531,41 +357,14 @@
                         <div class="testimonial-block">
                             <div class="inner-box">
                                 <div class="quote-icon flaticon-quote"></div>
-                                <div class="text">Medical Centre is a great place to get all of your medical needs. I
-                                    came in for a check up and did not wait more than 5 minutes before I was seen. I can
-                                    only imagine the type of service you get for more serious issues. Thanks!</div>
+                                <div class="text">السلام عليكم ورحمه الله وبركاتة
+                                    انا بشكر الدكتور الذوق الخلوق عبد العال دياب على إجرائة لى عملية الفتاق وشد العضلات والبطن وعلى متابعتة وعدم تقصيرة في اى شيئ  وعلى أسلوبه المتواضع فى المعاملة .. وبشكر كل فريق العمل بمستشفى الدكتور عاطف نور الدين على مراعتهم وزوقهم خاصتا الأستاذة ايمان .. جزاك الله كل الخير يا سيدي الفاضل دكتور عبد العال دياب
+                                   
+                                </div>
                             </div>
                         </div>
 
-                        <!--Testimonial Block -->
-                        <div class="testimonial-block">
-                            <div class="inner-box">
-                                <div class="quote-icon flaticon-quote"></div>
-                                <div class="text">Medical Centre is a great place to get all of your medical needs. I
-                                    came in for a check up and did not wait more than 5 minutes before I was seen. I can
-                                    only imagine the type of service you get for more serious issues. Thanks!</div>
-                            </div>
-                        </div>
-
-                        <!--Testimonial Block -->
-                        <div class="testimonial-block">
-                            <div class="inner-box">
-                                <div class="quote-icon flaticon-quote"></div>
-                                <div class="text">Medical Centre is a great place to get all of your medical needs. I
-                                    came in for a check up and did not wait more than 5 minutes before I was seen. I can
-                                    only imagine the type of service you get for more serious issues. Thanks!</div>
-                            </div>
-                        </div>
-
-                        <!--Testimonial Block -->
-                        <div class="testimonial-block">
-                            <div class="inner-box">
-                                <div class="quote-icon flaticon-quote"></div>
-                                <div class="text">Medical Centre is a great place to get all of your medical needs. I
-                                    came in for a check up and did not wait more than 5 minutes before I was seen. I can
-                                    only imagine the type of service you get for more serious issues. Thanks!</div>
-                            </div>
-                        </div>
+                        
 
                     </div>
 
@@ -576,50 +375,28 @@
                                 <figure class="thumb-box"><img src="images/resource/author-1.jpg" alt="">
                                 </figure>
                                 <div class="author-info">
-                                    <div class="author-name">Max Winchester</div>
-                                    <div class="designation">Kidny Patient</div>
+                                    <div class="author-name">عبدالله</div>
+                                    <div class="designation">Ismailia</div>
                                 </div>
                             </div>
                             <div class="thumb-item">
                                 <figure class="thumb-box"><img src="images/resource/author-2.jpg" alt="">
                                 </figure>
                                 <div class="author-info">
-                                    <div class="author-name">Max Winchester</div>
-                                    <div class="designation">Kidny Patient</div>
+                                    <div class="author-name">Nada A. Basha</div>
+                                    <div class="designation">Ismailia</div>
                                 </div>
                             </div>
                             <div class="thumb-item">
                                 <figure class="thumb-box"><img src="images/resource/author-3.jpg" alt="">
                                 </figure>
                                 <div class="author-info">
-                                    <div class="author-name">Max Winchester</div>
-                                    <div class="designation">Kidny Patient</div>
+                                    <div class="author-name">Noha Ahmed</div>
+                                    <div class="designation">Cairo</div>
                                 </div>
                             </div>
-                            <div class="thumb-item">
-                                <figure class="thumb-box"><img src="images/resource/author-1.jpg" alt="">
-                                </figure>
-                                <div class="author-info">
-                                    <div class="author-name">Max Winchester</div>
-                                    <div class="designation">Kidny Patient</div>
-                                </div>
-                            </div>
-                            <div class="thumb-item">
-                                <figure class="thumb-box"><img src="images/resource/author-2.jpg" alt="">
-                                </figure>
-                                <div class="author-info">
-                                    <div class="author-name">Max Winchester</div>
-                                    <div class="designation">Kidny Patient</div>
-                                </div>
-                            </div>
-                            <div class="thumb-item">
-                                <figure class="thumb-box"><img src="images/resource/author-3.jpg" alt="">
-                                </figure>
-                                <div class="author-info">
-                                    <div class="author-name">Max Winchester</div>
-                                    <div class="designation">Kidny Patient</div>
-                                </div>
-                            </div>
+                           
+                            
                         </div>
                     </div>
 
@@ -712,38 +489,7 @@
         </section>
         <!-- End News Section -->
 
-        <!-- Newsletter Section -->
-        <section class="newsletter-section">
-            <div class="auto-container">
-                <div class="row clearfix">
-                    <!-- Title Column -->
-                    <div class="title-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="inner-column">
-                            <h2>Subscribe Our Newsletter</h2>
-                            <div class="text">To receive email releases, simply provide us with your email address
-                                below.</div>
-                        </div>
-                    </div>
-                    <!-- Form Column -->
-                    <div class="form-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="inner-column">
-                            <!-- Subscribe Form -->
-                            <div class="subscribe-form">
-                                <form method="post" action="contact.html">
-                                    <div class="form-group">
-                                        <input type="email" name="email" value=""
-                                            placeholder="Your Email Address" required>
-                                        <button type="submit" class="theme-btn btn-style-two"><span
-                                                class="txt">subscribe</span></button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Newsletter Section -->
+    
 
         <x-nav-footer></x-nav-footer>
 
@@ -786,12 +532,6 @@
 
     <!-- Color Palate / Color Switcher -->
     <div class="color-palate">
-        <div class="color-trigger">
-            <i class="fas fa-cog"></i>
-        </div>
-        <div class="color-palate-head">
-            <h6>Choose Your Color</h6>
-        </div>
         <div class="various-color clearfix">
             <div class="colors-list">
                 <span class="palate default-color active" data-theme-file="css/color-themes/default-theme.css"></span>
@@ -805,18 +545,7 @@
             </div>
         </div>
 
-        <ul class="rtl-version option-box">
-            <li class="rtl">RTL Version</li>
-            <li>LTR Version</li>
-        </ul>
-
-        <a href="#" class="purchase-btn">Purchase now $17</a>
-
-        <div class="palate-foo">
-            <span>You will find much more options for colors and styling in admin panel. This color picker is used only
-                for demonstation purposes.</span>
-        </div>
-
+        
     </div>
 
     <!--Scroll to top-->

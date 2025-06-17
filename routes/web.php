@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ServiceController;
+use Illuminate\Foundation\Bootstrap\SetRequestForConsole;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -19,13 +20,15 @@ Route::get('/', function () {
     if (Auth::check()) { // لو الشخص مسجل دخول
         if (Auth::user()->role === 'admin') {
             return redirect()->route('admin.dashboard');
-        } else {
-            return redirect()->route('user.index');
         }
     }
-
-    return view('user.index');
+    $services = Service::all();
+    return view('user.index',compact('services'))->name('home');
 });
+
+
+
+
 
 /////////////////////////////////////////////////////////
 // Dashboard (only for logged-in users)
@@ -39,13 +42,8 @@ Route::get('/', function () {
 /////////////////////////////////////////////////////////
 // public services routes
 /////////////////////////////////////////////////////////
-Route::get('/services', function () {
-    $services = Service::all()->latest()->simplePaginate(1);
-
-    return view('user.service.index', [
-        'services' => $services
-    ]);
-});
+Route::get('/',[ServiceController::class, 'index'])->name('home');
+Route::get('/services/{service}', [ServiceController::class, 'show'])->name('services.show');
 
 
 

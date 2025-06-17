@@ -26,119 +26,176 @@
     {{-- @include('messages_alert') --}}
 
     <!-- row -->
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <form action="{{ route('admin.services.update', $service->id) }}" method="POST"
-                        enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
+   <div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <form action="{{ route('admin.services.update', $service->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
 
-                        <div class="form-group">
-                            <label>Main Title</label>
-                            <input type="text" name="title" class="form-control"
-                                value="{{ old('title', $service->title) }}" required>
-                        </div>
+                    <div class="form-group">
+                        <label>العنوان الرئيسي</label>
+                        <input type="text" name="main_title" class="form-control" value="{{ old('main_title', $service->main_title) }}" required>
+                    </div>
 
-                        <div class="form-group">
-                            <label>Icon (optional)</label>
-                            <input type="file" name="icon" class="form-control">
-                            @if ($service->icon)
-                                <img src="{{ asset('storage/' . $service->icon) }}" alt="Icon" width="50"
-                                    class="mt-2">
-                            @endif
-                        </div>
+                    <div class="form-group">
+                        <label>الايقونة (512x512)</label>
+                        <input type="file" name="icon" class="form-control">
+                        @if ($service->icon)
+                            <img src="{{ asset('storage/' . $service->icon) }}" alt="Icon" width="50" class="mt-2">
+                        @endif
+                    </div>
 
-                        <div class="form-group">
-                            <label>Main Image</label>
-                            <input type="file" name="title_image" class="form-control">
-                            @if ($service->title_image)
-                                <img src="{{ asset('storage/' . $service->title_image) }}" alt="Main Image" width="50"
-                                    class="mt-2">
-                            @endif
-                        </div>
+                    <div class="form-group">
+                        <label>الصورة الرئيسية (770x450)</label>
+                        <input type="file" name="main_image" class="form-control">
+                        @if ($service->main_image)
+                            <img src="{{ asset('storage/' . $service->main_image) }}" alt="Main Image" width="50" class="mt-2">
+                        @endif
+                    </div>
 
-                        <div class="form-group">
-                            <label>About (optional)</label>
-                            <textarea name="about" class="form-control">{{ old('about', $service->about) }}</textarea>
-                        </div>
+                    <div class="form-group">
+                        <label>عنوان الشرح</label>
+                        <textarea name="main_about" class="form-control" required>{{ old('main_about', $service->main_about) }}</textarea>
+                    </div>
 
-                        <div class="form-group">
-                            <label>Main Description</label>
-                            <textarea name="description1" class="form-control" required>{{ old('description1', $service->description1) }}</textarea>
-                        </div>
+                    <div class="form-group">
+                        <label>شرح تفصيلي</label>
+                        <textarea name="main_description" class="form-control" required>{{ old('main_description', $service->main_description) }}</textarea>
+                    </div>
 
-                        <div class="form-group">
-                            <label>Importance</label>
-                            <textarea name="importance" class="form-control" required>{{ old('importance', $service->importance) }}</textarea>
-                        </div>
+                    <div class="form-group">
+                        <label>صورة العنوان الثاني</label>
+                        <input type="file" name="secondary_image" class="form-control">
+                        @if ($service->secondary_image)
+                            <img src="{{ asset('storage/' . $service->secondary_image) }}" alt="Secondary Image" width="50" class="mt-2">
+                        @endif
+                    </div>
 
-                        <div class="form-group">
-                            <label>Small Image</label>
-                            <input type="file" name="small_image" class="form-control">
-                            @if ($service->small_image)
-                                <img src="{{ asset('storage/' . $service->small_image) }}" alt="Small Image" width="50"
-                                    class="mt-2">
-                            @endif
-                        </div>
+                    <div class="form-group">
+                        <label>العنوان الثاني</label>
+                        <input type="text" name="secondary_title" class="form-control" value="{{ old('secondary_title', $service->secondary_title) }}" required>
+                    </div>
 
-                        <div class="form-group">
-                            <label>Footer Title (optional)</label>
-                            <input type="text" name="mini_title" class="form-control"
-                                value="{{ old('mini_title', $service->mini_title) }}">
-                        </div>
+                    <div class="form-group">
+                        <label>الشرح التفصيلي الثاني</label>
+                        <textarea name="secondary_description" class="form-control" required>{{ old('secondary_description', $service->secondary_description) }}</textarea>
+                    </div>
 
-                        <div class="form-group">
-                            <label>Footer Description (optional)</label>
-                            <textarea name="description2" class="form-control">{{ old('description2', $service->description2) }}</textarea>
-                        </div>
+                    <hr>
+                    <!-- Mini Set 1 -->
+                    <h5>قبل وبعد 1</h5>
+                    <div class="form-group">
+                        <label>صورة قبل وبعد 1 (170x170)</label>
+                        <input type="file" name="mini_image_1" class="form-control">
+                        @if ($service->mini_image_1)
+                            <img src="{{ asset('storage/' . $service->mini_image_1) }}" alt="Mini Image 1" width="50" class="mt-2">
+                        @endif
+                    </div>
 
-                        <div class="form-group">
-                            <label>Footer Image (optional)</label>
-                            <input type="file" name="large_image" class="form-control">
-                            @if ($service->large_image)
-                                <img src="{{ asset('storage/' . $service->large_image) }}" alt="Footer Image"
-                                    width="50" class="mt-2">
-                            @endif
-                        </div>
+                    <div class="form-group">
+                        <label>عنوان قبل وبعد 1</label>
+                        <input type="text" name="mini_title_1" class="form-control" value="{{ old('mini_title_1', $service->mini_title_1) }}" required>
+                    </div>
 
-                        <div class="form-group">
-                            <label>Mini Image 1 (optional)</label>
-                            <input type="file" name="mini_one_image" class="form-control">
-                            @if ($service->mini_one_image)
-                                <img src="{{ asset('storage/' . $service->mini_one_image) }}" alt="Mini Image 1"
-                                    width="50" class="mt-2">
-                            @endif
-                        </div>
+                    <div class="form-group">
+                        <label>صورة عنوان قبل وبعد 1 (470x620)</label>
+                        <input type="file" name="mini_title_image_1" class="form-control">
+                        @if ($service->mini_title_image_1)
+                            <img src="{{ asset('storage/' . $service->mini_title_image_1) }}" alt="Mini Title Image 1" width="50" class="mt-2">
+                        @endif
+                    </div>
 
-                        <div class="form-group">
-                            <label>Mini Image 2 (optional)</label>
-                            <input type="file" name="mini_two_image" class="form-control">
-                            @if ($service->mini_two_image)
-                                <img src="{{ asset('storage/' . $service->mini_two_image) }}" alt="Mini Image 2"
-                                    width="50" class="mt-2">
-                            @endif
-                        </div>
+                    <div class="form-group">
+                        <label>شرح تفصيلي قبل وبعد 1</label>
+                        <textarea name="mini_description_1" class="form-control" required>{{ old('mini_description_1', $service->mini_description_1) }}</textarea>
+                    </div>
 
-                        <div class="form-group">
-                            <label>Mini Image 3 (optional)</label>
-                            <input type="file" name="mini_three_image" class="form-control">
-                            @if ($service->mini_three_image)
-                                <img src="{{ asset('storage/' . $service->mini_three_image) }}" alt="Mini Image 3"
-                                    width="50" class="mt-2">
-                            @endif
-                        </div>
+                    <div class="form-group">
+                        <label>عنوان الشرح قبل وبعد 1</label>
+                        <input type="text" name="mini_about_1" class="form-control" value="{{ old('mini_about_1', $service->mini_about_1) }}" required>
+                    </div>
 
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Update Service</button>
-                        </div>
+                    <hr>
+                    <!-- Mini Set 2 -->
+                    <h5>قبل وبعد 2</h5>
+                    <div class="form-group">
+                        <label>صورة قبل وبعد 2 (170x170)</label>
+                        <input type="file" name="mini_image_2" class="form-control">
+                        @if ($service->mini_image_2)
+                            <img src="{{ asset('storage/' . $service->mini_image_2) }}" alt="Mini Image 2" width="50" class="mt-2">
+                        @endif
+                    </div>
 
-                    </form>
-                </div>
+                    <div class="form-group">
+                        <label>عنوان قبل وبعد 2</label>
+                        <input type="text" name="mini_title_2" class="form-control" value="{{ old('mini_title_2', $service->mini_title_2) }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>صورة عنوان قبل وبعد 2 (470x620)</label>
+                        <input type="file" name="mini_title_image_2" class="form-control">
+                        @if ($service->mini_title_image_2)
+                            <img src="{{ asset('storage/' . $service->mini_title_image_2) }}" alt="Mini Title Image 2" width="50" class="mt-2">
+                        @endif
+                    </div>
+
+                    <div class="form-group">
+                        <label>شرح تفصيلي قبل وبعد 2</label>
+                        <textarea name="mini_description_2" class="form-control" required>{{ old('mini_description_2', $service->mini_description_2) }}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>عنوان الشرح قبل وبعد 2</label>
+                        <input type="text" name="mini_about_2" class="form-control" value="{{ old('mini_about_2', $service->mini_about_2) }}" required>
+                    </div>
+
+                    <hr>
+                    <!-- Mini Set 3 -->
+                    <h5>قبل وبعد 3</h5>
+                    <div class="form-group">
+                        <label>صورة قبل وبعد 3 (170x170)</label>
+                        <input type="file" name="mini_image_3" class="form-control">
+                        @if ($service->mini_image_3)
+                            <img src="{{ asset('storage/' . $service->mini_image_3) }}" alt="Mini Image 3" width="50" class="mt-2">
+                        @endif
+                    </div>
+
+                    <div class="form-group">
+                        <label>عنوان قبل وبعد 3</label>
+                        <input type="text" name="mini_title_3" class="form-control" value="{{ old('mini_title_3', $service->mini_title_3) }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>صورة عنوان قبل وبعد 3 (470x620)</label>
+                        <input type="file" name="mini_title_image_3" class="form-control">
+                        @if ($service->mini_title_image_3)
+                            <img src="{{ asset('storage/' . $service->mini_title_image_3) }}" alt="Mini Title Image 3" width="50" class="mt-2">
+                        @endif
+                    </div>
+
+                    <div class="form-group">
+                        <label>شرح تفصيلي قبل وبعد 3</label>
+                        <textarea name="mini_description_3" class="form-control" required>{{ old('mini_description_3', $service->mini_description_3) }}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>عنوان الشرح قبل وبعد 3</label>
+                        <input type="text" name="mini_about_3" class="form-control" value="{{ old('mini_about_3', $service->mini_about_3) }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">تحديث الخدمة</button>
+                    </div>
+
+                </form>
             </div>
         </div>
     </div>
+</div>
+
+
     <!-- row closed -->
 @endsection
 

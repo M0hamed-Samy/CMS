@@ -94,43 +94,76 @@
                                     <table id="example" class="table key-buttons text-md-nowrap">
                                         <thead>
                                             <tr>
-                                                <th class="border-bottom-0">Main title</th>
-                                                <th class="border-bottom-0">Icon</th>
-                                                <th class="border-bottom-0">Main image</th>
-                                                <th class="border-bottom-0">Main description</th>
-                                                <th class="border-bottom-0">About</th>
-                                                <th class="border-bottom-0">small image</th>
-                                                <th class="border-bottom-0">footer image</th>
-                                                <th class="border-bottom-0">footer title</th>
-                                                <th class="border-bottom-0">footer description</th>
-                                                <th class="border-bottom-0">mini image 1</th>
-                                                <th class="border-bottom-0">mini image 2</th>
-                                                <th class="border-bottom-0">mini image 3</th>
-                                                <th class="border-bottom-0">Actions</th> {{-- New Actions Column --}}
+                                                <th>العنوان الرئيسي</th>
+                                                <th>الايقونة (512x512)</th>
+                                                <th>الصورة الرئيسية(770x450)</th>
+                                                <th>عنوان الشرح</th>
+                                                <th>شرح تفصيلي</th>
+                                                <th>صورة العنوان الثاني</th>
+                                                <th>العنوان الثاني</th>
+                                                <th>الشرح التفصيلي الثاني</th>
+                                                <th>صورة قبل وبعد 1(170*170)</th>
+                                                <th>عنوان قبل وبعد 1</th>
+                                                <th>صورة عنوان قبل وبعد1(470x620)</th>
+                                                <th>شرح تفصيلي قبل وبعد 1</th>
+                                                <th>عنوان الشرح قبل وبعد 1</th>
+                                                <th>صورة قبل وبعد 2(170*170)</th>
+                                                <th>عنوان قبل وبعد 2</th>
+                                                <th>صورة عنوان قبل وبعد2(470x620)</th>
+                                                <th>شرح تفصيلي قبل وبعد 2</th>
+                                                <th>عنوان الشرح قبل وبعد 2</th>
+                                                <th>صورة قبل وبعد 3(170*170)</th>
+                                                <th>عنوان قبل وبعد 3</th>
+                                                <th>صورة عنوان قبل وبعد3(470x620)</th>
+                                                <th>شرح تفصيلي قبل وبعد 3</th>
+                                                <th>عنوان الشرح قبل وبعد 3</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($services as $service)
                                                 <tr>
-                                                    <td>{{ $service->title }}</td>
+                                                    <td>{{ $service->main_title }}</td>
+
                                                     <td><img src="{{ asset('storage/' . $service->icon) }}"
                                                             alt="Icon" width="50"></td>
-                                                    <td><img src="{{ asset('storage/' . $service->title_image) }}"
+                                                    <td><img src="{{ asset('storage/' . $service->main_image) }}"
                                                             alt="Main Image" width="50"></td>
-                                                    <td>{{ $service->description1 }}</td>
-                                                    <td>{{ $service->about }}</td>
-                                                    <td><img src="{{ asset('storage/' . $service->small_image) }}"
-                                                            alt="Small Image" width="50"></td>
-                                                    <td><img src="{{ asset('storage/' . $service->large_image) }}"
-                                                            alt="Footer Image" width="50"></td>
-                                                    <td>{{ $service->mini_title }}</td>
-                                                    <td>{{ $service->description2 }}</td>
-                                                    <td><img src="{{ asset('storage/' . $service->mini_one_image) }}"
+
+                                                    <td>{{ $service->main_about }}</td>
+                                                    <td>{{ $service->main_description }}</td>
+
+                                                    <td><img src="{{ asset('storage/' . $service->secondary_image) }}"
+                                                            alt="Secondary Image" width="50"></td>
+                                                    <td>{{ $service->secondary_title }}</td>
+                                                    <td>{{ $service->secondary_description }}</td>
+
+                                                    <td><img src="{{ asset('storage/' . $service->mini_image_1) }}"
                                                             alt="Mini Image 1" width="50"></td>
-                                                    <td><img src="{{ asset('storage/' . $service->mini_two_image) }}"
+                                                    <td>{{ $service->mini_title_1 }}</td>
+                                                    <td><img src="{{ asset('storage/' . $service->mini_title_image_1) }}"
+                                                            alt="Mini Title Image 1" width="50"></td>
+                                                    <td>{{ $service->mini_description_1 }}</td>
+                                                    <td>{{ $service->main_about_1 }}</td>
+
+
+
+                                                    <td><img src="{{ asset('storage/' . $service->mini_image_2) }}"
                                                             alt="Mini Image 2" width="50"></td>
-                                                    <td><img src="{{ asset('storage/' . $service->mini_three_image) }}"
+                                                    <td>{{ $service->mini_title_2 }}</td>
+                                                    <td><img src="{{ asset('storage/' . $service->mini_title_image_2) }}"
+                                                            alt="Mini Title Image 2" width="50"></td>
+                                                    <td>{{ $service->mini_description_2 }}</td>
+                                                    <td>{{ $service->mini_about_2 }}</td>
+                                                    <td><img src="{{ asset('storage/' . $service->mini_image_3) }}"
                                                             alt="Mini Image 3" width="50"></td>
+                                                    <td>{{ $service->mini_title_3 }}</td>
+                                                    <td><img src="{{ asset('storage/' . $service->mini_title_image_3) }}"
+                                                            alt="Mini Title Image 3" width="50"></td>
+                                                    <td>{{ $service->mini_description_3 }}</td>
+                                                    <td>{{ $service->mini_about_3 }}</td>
+
+
                                                     <td>
                                                         <a href="{{ route('admin.services.edit', $service->id) }}"
                                                             class="btn btn-sm btn-warning">Edit</a>
@@ -144,13 +177,13 @@
                                                                 onclick="return confirm('Are you sure?')">Delete</button>
                                                         </form>
                                                     </td>
-
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
+
 
                         </div>
                     </div>

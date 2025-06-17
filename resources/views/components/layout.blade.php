@@ -6,28 +6,7 @@
         <div class="preloader"></div>
 
         <header class="main-header">
-            <!--Header Top-->
-            <div class="header-top">
-                <div class="auto-container clearfix">
-                    <div class="top-left clearfix">
-                        <ul class="list">
-                            <li><span class="icon fas fa-envelope"></span> 2130 Fulton Street San Diego CA 94117-1080 USA
-                            </li>
-                            <li><span class="icon fas fa-phone"></span> <a href="tel:+555–123–2323"> 555–123–2323</a></li>
-                        </ul>
-                    </div>
-                    <div class="top-right clearfix">
-                        <ul class="social-icons">
-                            <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                            <li><a href="#"><span class="fab fa-google"></span></a></li>
-                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                            <li><a href="#"><span class="fab fa-linkedin"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- End Header Top -->
+            
 
             <!-- Header Upper -->
             <div class="header-upper">

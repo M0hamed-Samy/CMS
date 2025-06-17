@@ -44,8 +44,7 @@
     <!---Skinmodes css-->
     <link href="../../admin/assets/css-rtl/skin-modes.css" rel="stylesheet" />
 
-    <!--- Animations css-->
-    <link href="../../admin/assets/css/animate.css" rel="stylesheet">
+    
 
 </head>
 
@@ -60,92 +59,153 @@
             @include('admin.layouts.main-header')
 
             <div class="container-fluid">
-
                 <div class="row row-sm">
                     <div class="col-xl-12">
                         <div class="card mg-b-20">
-                            <div class="card-header pb-0">
-                                <h4 class="card-title mg-b-0">Create New Service</h4>
+                            <div class="card-header">
+                                <h4 class="card-title"><i class="fas fa-plus-circle me-2"></i>Create New Service</h4>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('admin.services.store') }}" method="POST" enctype="multipart/form-data">
+
+                                <form action="{{ route('admin.services.store') }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="form-group">
-                                        <label>Main Title</label>
-                                        <input type="text" name="title" class="form-control" required>
+                                        <label>العنوان الرئيسي</label>
+                                        <input type="text" name="main_title" class="form-control" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Icon (optional)</label>
-                                        <input type="file" name="icon" class="form-control">
+                                        <label>الايقونة (512x512)</label>
+                                        <input type="file" name="icon" class="form-control" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Main Image</label>
-                                        <input type="file" name="title_image" class="form-control" required>
+                                        <label>الصورة الرئيسية (770x450)</label>
+                                        <input type="file" name="main_image" class="form-control" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>About (optional)</label>
-                                        <textarea name="about" class="form-control"></textarea>
+                                        <label>عنوان الشرح</label>
+                                        <textarea name="main_about" class="form-control" required></textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Main Description</label>
-                                        <textarea name="description1" class="form-control" required></textarea>
+                                        <label>شرح تفصيلي</label>
+                                        <textarea name="main_description" class="form-control" required></textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Importance</label>
-                                        <textarea name="importance" class="form-control" required></textarea>
+                                        <label>صورة العنوان الثاني</label>
+                                        <input type="file" name="secondary_image" class="form-control" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Small Image</label>
-                                        <input type="file" name="small_image" class="form-control" required>
+                                        <label>العنوان الثاني</label>
+                                        <input type="text" name="secondary_title" class="form-control" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Footer Title (optional)</label>
-                                        <input type="text" name="mini_title" class="form-control">
+                                        <label>الشرح التفصيلي الثاني</label>
+                                        <textarea name="secondary_description" class="form-control" required></textarea>
+                                    </div>
+
+                                    {{-- Before & After 1 --}}
+                                    <div class="form-group">
+                                        <label>صورة قبل وبعد 1 (170x170)</label>
+                                        <input type="file" name="mini_image_1" class="form-control" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Footer Description (optional)</label>
-                                        <textarea name="description2" class="form-control"></textarea>
+                                        <label>عنوان قبل وبعد 1</label>
+                                        <input type="text" name="mini_title_1" class="form-control" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Footer Image (optional)</label>
-                                        <input type="file" name="large_image" class="form-control">
+                                        <label>صورة عنوان قبل وبعد 1 (470x620)</label>
+                                        <input type="file" name="mini_title_image_1" class="form-control" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Mini Image 1 (optional)</label>
-                                        <input type="file" name="mini_one_image" class="form-control">
+                                        <label>شرح تفصيلي قبل وبعد 1</label>
+                                        <textarea name="mini_description_1" class="form-control" required></textarea>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Mini Image 2 (optional)</label>
-                                        <input type="file" name="mini_two_image" class="form-control">
+                                        <label>عنوان الشرح قبل وبعد 1</label>
+                                        <input type="text" name="mini_about_1" class="form-control"
+                                            required>
+                                    </div>
+
+                                    {{-- Before & After 2 --}}
+                                    <div class="form-group">
+                                        <label>صورة قبل وبعد 2 (170x170)</label>
+                                        <input type="file" name="mini_image_2" class="form-control" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label>Mini Image 3 (optional)</label>
-                                        <input type="file" name="mini_three_image" class="form-control">
+                                        <label>عنوان قبل وبعد 2</label>
+                                        <input type="text" name="mini_title_2" class="form-control" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">Create Service</button>
+                                        <label>صورة عنوان قبل وبعد 2 (470x620)</label>
+                                        <input type="file" name="mini_title_image_2" class="form-control"
+                                            required>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label>شرح تفصيلي قبل وبعد 2</label>
+                                        <textarea name="mini_description_2" class="form-control" required></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>عنوان الشرح قبل وبعد 2</label>
+                                        <input type="text" name="mini_about_2" class="form-control"
+                                            required>
+                                    </div>
+
+                                    {{-- Before & After 3 --}}
+                                    <div class="form-group">
+                                        <label>صورة قبل وبعد 3 (170x170)</label>
+                                        <input type="file" name="mini_image_3" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>عنوان قبل وبعد 3</label>
+                                        <input type="text" name="mini_title_3" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>صورة عنوان قبل وبعد 3 (470x620)</label>
+                                        <input type="file" name="mini_title_image_3" class="form-control"
+                                            required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>شرح تفصيلي قبل وبعد 3</label>
+                                        <textarea name="mini_description_3" class="form-control" required></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>عنوان الشرح قبل وبعد 3</label>
+                                        <input type="text" name="mini_about_3" class="form-control"
+                                            required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-success">Create Service</button>
+                                    </div>
+
                                 </form>
+
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+
 
         </div>
 
@@ -213,6 +273,8 @@
 
     <!-- custom js -->
     <script src="../../admin/assets/js/custom.js"></script>
+
+   
 
 </body>
 

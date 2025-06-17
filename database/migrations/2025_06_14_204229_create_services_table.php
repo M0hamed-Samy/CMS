@@ -13,19 +13,29 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('icon')->nullable();
-            $table->string('title_image');
-            $table->string('title');
-            $table->string('about')->nullable();
-            $table->text('description1');
-            $table->text('importance');
-            $table->string('small_image');
-            $table->string('mini_title')->nullable();
-            $table->text('description2')->nullable();
-            $table->text('large_image')->nullable();
-            $table->string('mini_one_image')->nullable();
-            $table->string('mini_two_image')->nullable();
-            $table->string('mini_three_image')->nullable();
+            $table->string('icon');
+            $table->string('main_image');
+            $table->string('main_title');
+            $table->string('main_about');
+            $table->text('main_description');
+            $table->text('secondary_image');
+            $table->string('secondary_title');
+            $table->string('secondary_description');
+            $table->text('mini_image_1');
+            $table->text('mini_title_1');
+            $table->string('mini_title_image_1');
+            $table->string('mini_description_1');
+            $table->string('mini_about_1');
+            $table->text('mini_image_2');
+            $table->text('mini_title_2');
+            $table->string('mini_title_image_2');
+            $table->string('mini_description_2');
+            $table->string('mini_about_2');
+            $table->text('mini_image_3');
+            $table->text('mini_title_3');
+            $table->string('mini_title_image_3');
+            $table->string('mini_description_3');
+            $table->string('mini_about_3');
             $table->timestamps();
         });
     }
