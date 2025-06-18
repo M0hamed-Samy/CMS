@@ -40,7 +40,7 @@
 									<li ><a href="/doctor">عن الدكتور</a>
                                         
                                     </li>
-                                    <li style="margin-left: 20px;"><a href="/blog">مقالات</a></li>
+                                    <li style="margin-left: 20px;"><a href="/blogs">مقالات</a></li>
                                     <li><a href="/contact">اتصل بنا	</a></li>
 
                                 </ul>

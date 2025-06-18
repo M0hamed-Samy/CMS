@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ServiceController;
@@ -46,6 +49,9 @@ Route::get('/',[ServiceController::class, 'index'])->name('home');
 Route::get('/services/{service}', [ServiceController::class, 'show'])->name('services.show');
 
 
+Route::get('/blogs', [\App\Http\Controllers\BlogController::class, 'index'])->name('blogs.index');
+Route::get('/blogs/{blog}', [\App\Http\Controllers\BlogController::class, 'show'])->name('blog.details');
+
 
 // Show the login form
 Route::get('admin/login', [AuthenticatedSessionController::class, 'create'])
@@ -79,10 +85,33 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.services
     Route::get('/services/{service}/edit', [\App\Http\Controllers\Admin\ServiceController::class, 'edit'])->name('edit');
     Route::put('/services/{service}', [\App\Http\Controllers\Admin\ServiceController::class, 'update'])->name('update');
     Route::delete('/services/{service}', [\App\Http\Controllers\Admin\ServiceController::class, 'destroy'])->name('destroy');
+    
 });
 
-Route::middleware(['auth', 'role:admin',])->group(function () {
+Route::get('/videos', [\App\Http\Controllers\VideoController::class, 'index'])->name('videos.index');
+Route::get('/videos/{video}', [\App\Http\Controllers\VideoController::class, 'show'])->name('videos.show');
 
+
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('videos', \App\Http\Controllers\Admin\VideoController::class);
+});
+
+Route::get('/doctor', function () {
+    return view('doctors.index');
+})->name('doctor');
+
+
+// Public blogs index (accessible by all)
+
+
+// Admin routes with auth and role protection
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
+});
+
+
+
+Route::middleware(['auth', 'role:admin',])->group(function () {
 
 
     // Admin dashboard

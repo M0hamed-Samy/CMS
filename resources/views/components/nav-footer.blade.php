@@ -1,5 +1,5 @@
 <!--Main Footer-->
-<footer class="main-footer" style="background-image: url('{{ asset('images/background/2.jpg') }}')">
+<footer class="main-footer" style="background-color: #007bff; color: #fff;">
     <div class="auto-container">
         <!--Widgets Section-->
         <div class="widgets-section">
@@ -15,19 +15,20 @@
                                 <div class="logo-outer">
                                     <div class="logo"><a href="/"><img src="{{ asset('images/logo.png') }}"
                                                 alt="" title=""></a></div>
-
                                 </div>
-                                <div class="text">
-                                    Meditech is a library of health and medical templates with predefined web elements
-                                    which helps you to build your medical templates best site Provide Comprehensive
-                                    Quality Care About Medical Care Health Suspendisse metus turpis.
+                                <div class="text" style="color: #fff !important;">
+                                    ميديتك هي مكتبة شاملة لقوالب المواقع الطبية والصحية، تحتوي على عناصر جاهزة تساعدك في
+                                    تصميم أفضل موقع طبي بسهولة واحترافية.
                                 </div>
                                 <ul class="social-icons">
-                                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-google"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                                    <li><a href="#"><span class="fab fa-linkedin"></span></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61552282110056" target="_blank"
+                                            style="color: #fff;"><span class="fab fa-facebook-f"></span></a></li>
+                                    <li><a href="https://www.google.com/search?q=%D8%AF%D9%83%D8%AA%D9%88%D8%B1+%D8%B9%D8%A8%D8%AF+%D8%A7%D9%84%D8%B9%D8%A7%D9%84+%D8%AF%D9%8A%D8%A7%D8%A8&oq=%D8%AF%D9%83%D8%AA&gs_lcrp=EgZjaHJvbWUqEAgAEEUYExgnGDsYgAQYigUyEAgAEEUYExgnGDsYgAQYigUyDggBEEUYJxg7GIAEGIoFMgYIAhBFGDkyBggDEEUYOzIHCAQQABiABDIGCAUQRRg9MgYIBhBFGD0yBggHEEUYPdIBCDIzNDJqMGo0qAIAsAIA&sourceid=chrome&ie=UTF-8" style="color: #fff;"><span class="fab fa-google"></span></a>
+
+                                    </li>
+                                    <li><a href="https://www.instagram.com/dr._abdelal_diab/" style="color: #fff;"><span class="fab fa-instagram"></span></a>
+                                    </li>
+                                   
                                 </ul>
                             </div>
                         </div>
@@ -36,20 +37,14 @@
                         <div class="footer-column col-lg-5 col-md-6 col-sm-12">
                             <div class="footer-widget links-widget">
                                 <div class="footer-title clearfix">
-                                    <h2>Services</h2>
-                                    <div class="separator"></div>
+                                    <h2 style="color: #fff;">الخدمات</h2>
+                                    <div class="separator" style="background-color: #fff;"></div>
                                 </div>
                                 <ul class="footer-list">
-                                    {{-- @for ($index = 0; $index < 5; $index++)
-                                    <li><a href="{{ route('services.show', $service->id) }}">{{ $service->main_title }}</a></li>
-                                        
-                                    @endfor --}}
                                     @foreach ($services as $service)
-                                        <li><a
-                                                href="{{ route('services.show', $service->id) }}">{{ $service->main_title }}</a>
-                                        </li>
+                                        <li><a href="{{ route('services.show', $service->id) }}"
+                                                style="color: #fff;">{{ $service->main_title }}</a></li>
                                     @endforeach
-
                                 </ul>
                             </div>
                         </div>
@@ -65,34 +60,30 @@
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget news-widget">
                                 <div class="footer-title clearfix">
-                                    <h2>News Update</h2>
-                                    <div class="separator"></div>
+                                    <h2 style="color: #fff;">أحدث المقالات</h2>
+                                    <div class="separator" style="background-color: #fff;"></div>
                                 </div>
 
-                                <!--News Widget Block-->
-                                <div class="news-widget-block">
-                                    <div class="widget-inner">
-                                        <div class="image">
-                                            <img src="{{ asset('images/resource/news-image-1.jpg') }}" alt="News 1" />
+                                @foreach ($latest_blogs as $blog)
+                                    <!--News Widget Block-->
+                                    <div class="news-widget-block">
+                                        <div class="widget-inner">
+                                            <div class="image">
+                                                <a href="{{ route('blog.details', $blog->id) }}">
+                                                    <img src="{{ asset('storage/' . $blog->image) }}"
+                                                        alt="{{ $blog->title }}" />
+                                                </a>
+                                            </div>
+                                            <h3>
+                                                <a href="{{ route('blog.details', $blog->id) }}" style="color: #fff;">
+                                                    {{ $blog->title }}
+                                                </a>
+                                            </h3>
+                                            <div class="post-date" style="color: #fff;">
+                                                {{ $blog->created_at->format('F d, Y') }}</div>
                                         </div>
-                                        <h3><a href="{{ url('/blog-detail') }}">Integrative Medicine And Cancer
-                                                Treatment</a></h3>
-                                        <div class="post-date">July 11, 2017</div>
                                     </div>
-                                </div>
-
-                                <!--News Widget Block-->
-                                <div class="news-widget-block">
-                                    <div class="widget-inner">
-                                        <div class="image">
-                                            <img src="{{ asset('images/resource/news-image-2.jpg') }}" alt="News 2" />
-                                        </div>
-                                        <h3><a href="{{ url('/blog-detail') }}">Achieving Better Health Care One Patient
-                                                At A Time</a></h3>
-                                        <div class="post-date">July 11, 2018</div>
-                                    </div>
-                                </div>
-
+                                @endforeach
                             </div>
                         </div>
 
@@ -100,18 +91,24 @@
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget contact-widget">
                                 <div class="footer-title clearfix">
-                                    <h2>Contact Us</h2>
-                                    <div class="separator"></div>
+                                    <h2 style="color: #fff;">تواصل معنا</h2>
+                                    <div class="separator" style="background-color: #fff;"></div>
                                 </div>
 
                                 <ul class="contact-list">
-                                
-                                    <li><span class="icon flaticon-placeholder"></span>2130 Fulton Street San Diego <br>
-                                        CA 94117-1080 USA</li>
-                                    <li><span class="icon flaticon-call"></span>Mon to Fri : 08:30 - 18:00 <br> <a
-                                            href="https://wa.me/201008422674">010 08422674</a></li>
-                                    <li><span class="icon flaticon-message"></span>Do you have a Question? <a
-                                            href="mailto:info@gmail.com">info@gmail.com</a></li>
+                                    <li>
+                                        <span class="icon flaticon-placeholder" style="color: #fff;"></span>
+                                        <a href="https://maps.app.goo.gl/msijrPaovVFeEUaj7" target="_blank"
+                                            style="color: #fff; text-decoration: none;">
+                                            الإسماعيلية <br> برج أول المعاطي - أمام مدرسة السكة الحديد
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <span class="icon flaticon-call" style="color: #fff !important;"></span>
+                                        <p class="text" style="color: #fff !important;"> الاربع و الجمعة من 02:00 الي 06:00</p><br>
+                                        <a href="https://wa.me/201008422674" target="_blank"
+                                            style="color: #fff; text-decoration: none;">010 08422674</a>
+                                    </li>
                                 </ul>
 
                             </div>
@@ -125,10 +122,11 @@
     </div>
 
     <!-- Footer Bottom -->
-    <div class="footer-bottom">
+    <div class="footer-bottom" style="background-color: #0056b3; color: #fff; text-align: center; padding: 15px 0;">
         <div class="auto-container">
-            <div class="copyright">MediTech Health Care &copy; All Rights Reserved By Expertthemes</div>
+            <div class="footer-title clearfix" style="color: #fff !important;">
+                جميع الحقوق محفوظة &copy; 2023 <a href="/" style="color: #fff; text-decoration: none;">DrDiabClinics</a>
+            </div>
         </div>
     </div>
-
 </footer>
