@@ -12,7 +12,7 @@
         content="admin,admin dashboard,admin dashboard template,admin panel template,admin template,admin theme,bootstrap 4 admin template,bootstrap 4 dashboard,bootstrap admin,bootstrap admin dashboard,bootstrap admin panel,bootstrap admin template,bootstrap admin theme,bootstrap dashboard,bootstrap form template,bootstrap panel,bootstrap ui kit,dashboard bootstrap 4,dashboard design,dashboard html,dashboard template,dashboard ui kit,envato templates,flat ui,html,html and css templates,html dashboard template,html5,jquery html,premium,premium quality,sidebar bootstrap 4,template admin bootstrap 4" />
 
     <!-- Title -->
-    <title> Valex - Premium dashboard ui bootstrap rwd admin html5 template </title>
+    <title> المقالات</title>
 
     <!-- Favicon -->
     <link rel="icon" href="../../admin/assets/img/brand/favicon.png" type="image/x-icon" />
@@ -77,118 +77,73 @@
 
 
                 <!-- row opened -->
+                <!-- row opened -->
                 <div class="row row-sm">
-                    <!--div-->
                     <div class="col-xl-12">
-                        <div class="card mg-b-20">
+                        <div class="card">
                             <div class="card-header pb-0">
                                 <div class="d-flex justify-content-between">
-                                    <h4 class="card-title mg-b-0">Bordered Table</h4>
+                                    <h4 class="card-title mg-b-0">SIMPLE TABLE</h4>
                                     <i class="mdi mdi-dots-horizontal text-gray"></i>
                                 </div>
-                                <p class="tx-12 tx-gray-500 mb-2">Example of Valex Bordered Table.. <a
-                                        href="">Learn more</a></p>
+                                <p class="tx-12 tx-gray-500 mb-2">Example of Valex Simple Table. <a href="">Learn
+                                        more</a></p>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table id="example" class="table key-buttons text-md-nowrap">
+                                    <table class="table text-md-nowrap table-bordered" id="example1">
                                         <thead>
                                             <tr>
-                                                <th>العنوان الرئيسي</th>
-                                                <th>الايقونة (512x512)</th>
-                                                <th>الصورة الرئيسية(770x450)</th>
-                                                <th>عنوان الشرح</th>
-                                                <th>شرح تفصيلي</th>
-                                                <th>صورة العنوان الثاني</th>
-                                                <th>العنوان الثاني</th>
-                                                <th>الشرح التفصيلي الثاني</th>
-                                                <th>صورة قبل وبعد 1(170*170)</th>
-                                                <th>عنوان قبل وبعد 1</th>
-                                                <th>صورة عنوان قبل وبعد1(470x620)</th>
-                                                <th>شرح تفصيلي قبل وبعد 1</th>
-                                                <th>عنوان الشرح قبل وبعد 1</th>
-                                                <th>صورة قبل وبعد 2(170*170)</th>
-                                                <th>عنوان قبل وبعد 2</th>
-                                                <th>صورة عنوان قبل وبعد2(470x620)</th>
-                                                <th>شرح تفصيلي قبل وبعد 2</th>
-                                                <th>عنوان الشرح قبل وبعد 2</th>
-                                                <th>صورة قبل وبعد 3(170*170)</th>
-                                                <th>عنوان قبل وبعد 3</th>
-                                                <th>صورة عنوان قبل وبعد3(470x620)</th>
-                                                <th>شرح تفصيلي قبل وبعد 3</th>
-                                                <th>عنوان الشرح قبل وبعد 3</th>
-                                                <th>Actions</th>
+                                                <th class="wd-15p border-bottom-0">عنوان الفيديو</th>
+                                                <th class="wd-30p border-bottom-0">الشرح التفصيلي</th>
+                                                <th class="wd-15p border-bottom-0">صورة الفيديو</th>
+                                                <th class="wd-15p border-bottom-0">الإجراءات</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($services as $service)
+                                            @foreach ($videos as $video)
                                                 <tr>
-                                                    <td>{{ $service->main_title }}</td>
+                                                    <td>{{ $video->title }}</td>
 
-                                                    <td><img src="{{ asset('storage/' . $service->icon) }}"
-                                                            alt="Icon" width="50"></td>
-                                                    <td><img src="{{ asset('storage/' . $service->main_image) }}"
-                                                            alt="Main Image" width="50"></td>
-
-                                                    <td>{{ $service->main_about }}</td>
-                                                    <td>{{ $service->main_description }}</td>
-
-                                                    <td><img src="{{ asset('storage/' . $service->secondary_image) }}"
-                                                            alt="Secondary Image" width="50"></td>
-                                                    <td>{{ $service->secondary_title }}</td>
-                                                    <td>{{ $service->secondary_description }}</td>
-
-                                                    <td><img src="{{ asset('storage/' . $service->mini_image_1) }}"
-                                                            alt="Mini Image 1" width="50"></td>
-                                                    <td>{{ $service->mini_title_1 }}</td>
-                                                    <td><img src="{{ asset('storage/' . $service->mini_title_image_1) }}"
-                                                            alt="Mini Title Image 1" width="50"></td>
-                                                    <td>{{ $service->mini_description_1 }}</td>
-                                                    <td>{{ $service->main_about_1 }}</td>
-
-
-
-                                                    <td><img src="{{ asset('storage/' . $service->mini_image_2) }}"
-                                                            alt="Mini Image 2" width="50"></td>
-                                                    <td>{{ $service->mini_title_2 }}</td>
-                                                    <td><img src="{{ asset('storage/' . $service->mini_title_image_2) }}"
-                                                            alt="Mini Title Image 2" width="50"></td>
-                                                    <td>{{ $service->mini_description_2 }}</td>
-                                                    <td>{{ $service->mini_about_2 }}</td>
-                                                    <td><img src="{{ asset('storage/' . $service->mini_image_3) }}"
-                                                            alt="Mini Image 3" width="50"></td>
-                                                    <td>{{ $service->mini_title_3 }}</td>
-                                                    <td><img src="{{ asset('storage/' . $service->mini_title_image_3) }}"
-                                                            alt="Mini Title Image 3" width="50"></td>
-                                                    <td>{{ $service->mini_description_3 }}</td>
-                                                    <td>{{ $service->mini_about_3 }}</td>
-
+                                                    <td style="max-width: 250px; word-break: break-word;">
+                                                        {{ Str::limit($video->description, 150) }}
+                                                    </td>
 
                                                     <td>
-                                                        <a href="{{ route('admin.services.edit', $service->id) }}"
-                                                            class="btn btn-sm btn-warning">Edit</a>
+                                                        @if ($video->video_img)
+                                                            <img src="{{ asset('storage/' . $video->video_img) }}"
+                                                                alt="Video Image" width="70" height="70"
+                                                                style="object-fit:cover; border-radius:5px;">
+                                                        @else
+                                                            <span>لا يوجد صورة</span>
+                                                        @endif
+                                                    </td>
 
-                                                        <form
-                                                            action="{{ route('admin.services.destroy', $service->id) }}"
+                                                   
+
+                                                    <td>
+                                                        <a href="{{ route('admin.videos.edit', $video->id) }}"
+                                                            class="btn btn-sm btn-warning mb-1">تعديل</a>
+
+                                                        <form action="{{ route('admin.videos.destroy', $video->id) }}"
                                                             method="POST" style="display: inline-block;">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="btn btn-sm btn-danger"
-                                                                onclick="return confirm('Are you sure?')">Delete</button>
+                                                                onclick="return confirm('هل أنت متأكد من الحذف؟')">حذف</button>
                                                         </form>
                                                     </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
+
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-                    <!--/div-->
                 </div>
+
                 <!-- /row -->
             </div>
             <!-- Container closed -->

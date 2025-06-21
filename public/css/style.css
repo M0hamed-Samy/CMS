@@ -93,7 +93,7 @@ body{
 	background:#ffffff;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Cairo', sans-serif;
 }
 
 a{
@@ -116,7 +116,7 @@ h1,h2,h3,h4,h5,h6 {
 	background:none;
 	line-height:1.2em;
 	letter-spacing: -0.02em;
-	font-family: 'Lora', serif;
+	font-family: 'Cairo', sans-serif;
 }
 
 textarea{
@@ -132,14 +132,14 @@ p{
 	font-size: 16px;
 	line-height: 1.6em;
 	font-weight: 400;
-	color: #555555;
+	color: #000000;
 }
 
 .text{
 	font-size: 16px;
 	line-height: 1.6em;
 	font-weight: 400;
-	color: #555555;
+	color: #000000;
 	margin: 0;
 }
 
@@ -212,7 +212,7 @@ ul,li{
 	background: none;
 	border:1px solid #aaaaaa;
 	text-transform: capitalize;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Cairo', sans-serif;
 }
 
 .btn-style-one .txt{

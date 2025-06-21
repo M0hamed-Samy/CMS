@@ -17,6 +17,7 @@ use App\Models\Service;
 use Illuminate\Support\Facades\Auth;
 
 
+
 // Public route
 // الصفحة الرئيسية
 Route::get('/', function () {
@@ -88,13 +89,14 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.services
     
 });
 
-Route::get('/videos', [\App\Http\Controllers\VideoController::class, 'index'])->name('videos.index');
-Route::get('/videos/{video}', [\App\Http\Controllers\VideoController::class, 'show'])->name('videos.show');
-
-
+// Admin Routes
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('videos', \App\Http\Controllers\Admin\VideoController::class);
 });
+
+// User Routes
+Route::get('/videos', [\App\Http\Controllers\VideoController::class, 'index'])->name('videos.index');
+Route::get('/videos/{video}', [\App\Http\Controllers\VideoController::class, 'show'])->name('videos.show');
 
 Route::get('/doctor', function () {
     return view('doctors.index');

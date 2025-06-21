@@ -6,6 +6,7 @@ use App\Models\Blog;
 use Illuminate\Support\Facades\View;
 
 use App\Models\Service;
+use App\Models\Video;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -36,6 +37,12 @@ class AppServiceProvider extends ServiceProvider
             $latest_blogs = Blog::latest()->take(2)->get();
             View::share('latest_blogs', $latest_blogs);
             View::share('blogs', $blogs);
+        }
+        if (Schema::hasTable('videos')) {
+            $videos = Video::all();
+            $video_user = Video::latest()->paginate(6);
+            View::share('video_user', $video_user);
+            View::share('videos', $videos);
         }
     }
 }
