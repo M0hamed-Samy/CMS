@@ -44,8 +44,8 @@
                                 <h3>تحتاج مساعدة ؟</h3>
                                 <p>يمكنك الاتصال </p>
                                 <ul>
-                                    <li><i class="fa fa-tty"></i> +0 000000 0000</li>
-                                    <li><i class="far fa-envelope"></i> <a href="#">mail@meditech.com</a></li>
+                                    
+                                    <li><i class="fa fa-tty"></i>010 08422674</li>
                                 </ul>
                             </div>
 

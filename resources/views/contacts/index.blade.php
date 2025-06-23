@@ -31,17 +31,17 @@
             <div class="outer-container">
                 <div class="auto-container clearfix">
                     <div class="map-content">
-                        <div class="title">تريد الحجز؟</div>
+                        <div class="title">تريد الحجز؟</div>    
                         <h2>معلومات التواصل</h2>
                         <ul class="info-list">
                             <li><span class="icon fas fa-envelope"></span>abdelaldiab@gmail.com</li>
                             <li><span class="icon fas fa-phone-volume"></span>(+20) 10 08422674</li>
                             <li><span class="icon fas fa-map-marker-alt"></span><a
-                                    href="https://maps.app.goo.gl/C1Eros4wx2xwaPCi9" target="_blank">فرع الاسماعيلية: برج ابو المعاطى</a>
+                                    href="https://maps.app.goo.gl/C1Eros4wx2xwaPCi9" target="_blank">فرع الاسماعيلية : شارع السكة الحديد برج ابو المعاطي</a>
                             </li>
-                            <li><span class="icon far fa-clock"></span>السبت الي الخميس من 10:00 - 06:00</li>
+                            <li><span class="icon far fa-clock"></span>السبت الي الخميس ماعادا الاربعاء من 10:00 - 06:00</li>
                             <li><span class="icon fas fa-map-marker-alt"></span><a
-                                    href="https://maps.app.goo.gl/RYtUKDEWm5bcK4ER6" target="_blank">فرع القاهرة : الزيتون شارع ستان باشا</a>
+                                    href="https://maps.app.goo.gl/x7iiMVfhd7MdynHP9?g_st=aw" target="_blank">فرع القاهرة : مدينة نصر 4 عمارات مايو</a>
                             </li>
                             <li><span class="icon far fa-clock"></span>الاربعاء و الجمعة من 06:00 - 02:00</li>
 

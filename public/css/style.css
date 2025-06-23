@@ -2223,14 +2223,14 @@ img{
 	transition-delay: 600ms;
 }
 
-.main-slider .content h2{
-	position:relative;
-	font-size:48px;
-	color:#004cda;
-	font-weight:700;
-	line-height:1em;
+.main-slider .content h2 {
+	position: relative;
+	font-size: 48px;
+	color: #004cda;
+	font-weight: 700;
+	line-height: 1em;
 	opacity: 0;
-	margin-top:25px;
+	margin-top: 25px;
 	-webkit-transition: all 1000ms ease;
 	-moz-transition: all 100ms ease;
 	-ms-transition: all 1000ms ease;
@@ -2241,7 +2241,9 @@ img{
 	-ms-transform: translateX(80px);
 	-o-transform: translateX(80px);
 	transform: translateX(80px);
+	text-shadow: 2px 2px 5px white;
 }
+
 
 .main-slider .swiper-slide-active .content h2{
 	opacity: 1;

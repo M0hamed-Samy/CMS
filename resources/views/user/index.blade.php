@@ -65,10 +65,9 @@
                 </div>
 
                 <div class="services-carousel owl-carousel owl-theme">
-                        @foreach ($services as $service)
-
-                    <!-- Department Block -->
-                    <div id="services-section">
+                    @foreach ($services as $service)
+                        <!-- Department Block -->
+                        <div id="services-section">
                             <div class="department-block">
                                 <div class="inner-box">
                                     <div class="upper-box">
@@ -88,7 +87,7 @@
                                 </div>
                             </div>
                         </div>
-                        @endforeach
+                    @endforeach
 
 
 
@@ -146,7 +145,7 @@
                             <div class="inner wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
                                 <div class="content">
                                     <div class="count-outer count-box alternate">
-                                        +<span class="count-text" data-speed="3000" data-stop="1000">0</span>
+                                        +<span class="count-text" data-speed="3000" data-stop="10000">0</span>
                                     </div>
                                     <h4 class="counter-title">عملية</h4>
                                 </div>
@@ -177,36 +176,52 @@
 
 
         <!-- FullWidth Section -->
-        <section class="fullwidth-section">
+        <section class="contact-map-section">
             <div class="outer-container">
-                <div class="clearfix">
+                <div class="auto-container clearfix">
+                    <div class="map-content">
+                        <div class="title">تريد الحجز؟</div>
+                        <h2>معلومات التواصل</h2>
+                        <ul class="info-list">
+                            <li><span class="icon fas fa-envelope"></span>abdelaldiab@gmail.com</li>
+                            <li><span class="icon fas fa-phone-volume"></span>(+20) 10 08422674</li>
+                            <li><span class="icon fas fa-map-marker-alt"></span><a
+                                    href="https://maps.app.goo.gl/C1Eros4wx2xwaPCi9" target="_blank">فرع الاسماعيلية :
+                                    شارع السكة الحديد برج ابو المعاطي</a>
+                            </li>
+                            <li><span class="icon far fa-clock"></span>السبت الي الخميس من 10:00 - 06:00</li>
+                            <li><span class="icon fas fa-map-marker-alt"></span><a
+                                    href="https://maps.app.goo.gl/x7iiMVfhd7MdynHP9?g_st=aw" target="_blank">فرع القاهرة
+                                    : مدينة نصر 4 عمارات مايو</a>
+                            </li>
+                            <li><span class="icon far fa-clock"></span>الاربعاء و الجمعة من 06:00 - 02:00</li>
 
-                   
+                        </ul>
 
-                    <!-- Right Column -->
-                    <div class="right-column">
-                        <div class="inner-column">
+                        <ul class="social-icons">
+                            <li><a href="https://www.facebook.com/profile.php?id=61552282110056"><span
+                                        class="fab fa-facebook-f"></span></a></li>
+                            <li><a
+                                    href="https://www.google.com/search?q=%D8%AF%D9%83%D8%AA%D9%88%D8%B1+%D8%B9%D8%A8%D8%AF+%D8%A7%D9%84%D8%B9%D8%A7%D9%84+%D8%AF%D9%8A%D8%A7%D8%A8&oq=%D8%AF%D9%83%D8%AA&gs_lcrp=EgZjaHJvbWUqEAgAEEUYExgnGDsYgAQYigUyEAgAEEUYExgnGDsYgAQYigUyDggBEEUYJxg7GIAEGIoFMgYIAhBFGDkyBggDEEUYOzIHCAQQABiABDIGCAUQRRg9MgYIBhBFGD0yBggHEEUYPdIBCDIzNDJqMGo0qAIAsAIA&sourceid=chrome&ie=UTF-8"><i
+                                        class="fab fa-google"></i></a></li>
+                            <li><a href="https://www.instagram.com/dr._abdelal_diab/"><i
+                                        class="fab fa-instagram"></i></a></li>
 
-                            <!-- Upper Box -->
-                            <div class="upper-box">
-                                <div class="icon flaticon-alarm-clock"></div>
-                                <h3>ساعات العمل</h3>
-                            </div>
-                            <ul class="time-list">
-                                <li class="clearfix"><span class="left-span pull-left">السبت الى الخميس (ما عادا الاربعاء)</span><span
-                                        class="right-span pull-right">06:00am - 10:00pm</span></li>
-
-                                <li class="clearfix"><span class="left-span pull-left">الجمعة - الاربعاء</span><span
-                                        class="right-span pull-right">02:00am - 06:00pm</span></li>
-                                
-                            </ul>
-
+                        </ul>
+                        <div class="btn-box text-center">
+                            <a href="{{ url('https://wa.me/201008422674') }}" target="_blank"
+                                class="theme-btn btn-style-two">
+                                <span class="txt"><i class="fas fa-user-md"></i> &ensp; احجز الان</span>
+                            </a>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
+                
+
             </div>
         </section>
+        <!-- End Map Section -->
         <!-- End FullWidth Section -->
 
         <!-- Testimonial Section -->
@@ -297,53 +312,7 @@
         </section>
         <!-- End Testimonial Section Two -->
 
-        <!-- News Section -->
-        <section class="news-section">
-            <div class="auto-container">
-                <!-- Sec Title -->
-                <div class="sec-title centered">
-                    <h2>احدث الخدمات</h2>
-                    <div class="separator style-three"></div>
-                </div>
-
-                <div class="row clearfix">
-                    @foreach ($services->take(4) as $service)
-                        <div class="news-block col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <div class="image">
-                                    <div class="category">Service</div>
-                                    <a href="{{ url('/services/' . $service->id) }}">
-                                        <img src="{{ asset('storage/' . $service->title_image) }}"
-                                            alt="{{ $service->main_title }}" />
-                                    </a>
-                                </div>
-                                <div class="lower-content">
-                                    <ul class="post-meta">
-                                        <li><a href="#">03 Comments</a></li>
-                                        <!-- You can make this dynamic later -->
-                                        <li><a href="#">Published:
-                                                {{ $service->created_at->format('F d, Y') }}</a></li>
-                                        <li><a href="#">12 Likes</a></li>
-                                        <!-- You can make this dynamic later -->
-                                    </ul>
-                                    <h3>
-                                        <a href="{{ url('/services/' . $service->id) }}">
-                                            {{ $service->main_title }}
-                                        </a>
-                                    </h3>
-                                    <div class="text">
-                                        {{ \Illuminate\Support\Str::limit($service->main_description, 100) }}
-                                    </div>
-                                    <a href="{{ url('/services/' . $service->id) }}" class="read-more">اقرأ
-                                        المزيد</a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-
+       
 
 
 

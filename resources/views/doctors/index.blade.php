@@ -36,36 +36,41 @@
                         <div class="detail-column col-lg-8 col-md-12 col-sm-12">
                             <div class="inner-box">
                                 <div class="info-header">
-                                    <p>استشارى الجراحة التجميلية</p>
+                                    <p>معلومات عامة</p>
                                     <h3>دكتور عبد العال دياب</h3>
-                                    <span class="designation">Neurosurgeon</span>
+                                    <span class="designation">استشارى جراحة</span>
                                 </div>
                                 <ul class="info-list" style="padding: 0; margin: 0; list-style: none;">
                                     <li style="margin-bottom: 30px;">
                                         <strong style="display: block; margin-bottom: 10px;">التخصص</strong>
-                                        <p style="margin: 5px 0;">:</p>
-                                        <p style="margin: 5px 0;">أخصائي قلب</p>
+                                        <br>
+                                        <p style="margin: 5px 0;">استشارى جراحات التجميل</p>
                                     </li>
                                     <li style="margin-bottom: 30px;">
                                         <strong style="display: block; margin-bottom: 10px;">التعليم</strong>
-                                        <p style="margin: 5px 0;">:</p>
-                                        <p style="margin: 5px 0;">دكتوراه في الطب، جامعة تكساس، الولايات المتحدة
-                                            الأمريكية (1990)</p>
-                                        <p style="margin: 5px 0;">برنامج التأهيل الطبي، جامعة سانت لويس (سانت لويس،
-                                            ميسوري 1996)</p>
+                                        <br>
+                                        <p style="margin: 5px 0;">بكالوريوس طب جامعة الازهر الشريف (1989)</p>
+                                        <p style="margin: 5px 0;">ماجستير طب عين شمس (1998)</p>
+                                        <p style="margin: 5px 0;">زميل كلية الجراحين الملكية البريطانية (2003)</p>
+
                                     </li>
                                     <li style="margin-bottom: 30px;">
                                         <strong style="display: block; margin-bottom: 10px;">الخبرة</strong>
-                                        <p style="margin: 5px 0;">:</p>
+                                        <br>                    
+                                        <p style="margin: 5px 0;">خبرة +35 سنة في جراحات التجميل و الحوادث و الاصابات و الجروح المزمنة وعلاج الحروق</p>                                                           
+                                        <p style="margin: 5px 0;">حاصل علي الطبيب المثالي علي مستوي الجمهورية عام 1995</p>                                                           
                                         
-                                        <p style="margin: 5px 0;">15 سنة خبرة في مجال الطب</p>
+
                                     </li>
                                     <li style="margin-bottom: 30px;">
                                         <strong style="display: block; margin-bottom: 10px;">الوظيفة</strong>
-                                        <p style="margin: 5px 0;">:</p>
+                                        <br>
 
-                                        <p style="margin: 5px 0;">عميد كلية الطب ونائب الرئيس التنفيذي للشؤون الطبية
-                                            بجامعة تكساس للعلوم الصحية في سان أنطونيو</p>
+                                        <p style="margin: 5px 0;">مؤسس قسم جراحة التجميل و الحروق بمستشفي طلبة ابو الريش</p>
+                                        <p style="margin: 5px 0;">مشرف وحدة الاصابات والحوادث مستشفي السلام</p>
+                                        <p style="margin: 5px 0;">مدير مستشفي المصطفي الطبي</p>
+                                        <p style="margin: 5px 0;">مدير مركز (وادي كلينيك) للتجميل</p>
+                                        <p style="margin: 5px 0;">مدير مركز (ديفا كلينيك) حاليا</p>
                                     </li>
                                 </ul>
 

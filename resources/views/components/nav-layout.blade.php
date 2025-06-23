@@ -35,7 +35,7 @@
 											@endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="/videos">فيدوهات</a></li>
+                                    <li><a href="/videos">فيديوهات</a></li>
 
 									<li ><a href="/doctor">عن الدكتور</a>
                                         
@@ -54,7 +54,7 @@
 							<div class="search-box-btn"><span class="icon flaticon-search"></span></div>
                             <!-- Button Box -->
                             <div class="btn-box">
-                                <a href="/contact" class="theme-btn btn-style-one"><span class="txt">خحز موعد</span></a>
+                                <a href="/contact" class="theme-btn btn-style-one"><span class="txt">حجز موعد</span></a>
                             </div>
                         </div>
                     </div>
