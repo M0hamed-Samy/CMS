@@ -109,15 +109,16 @@ a:visited{
 	outline:none;
 }
 
-h1,h2,h3,h4,h5,h6 {
-	position:relative;
-	font-weight:normal;
-	margin:0px;
-	background:none;
-	line-height:1.2em;
-	letter-spacing: -0.02em;
-	font-family: 'Cairo', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+    position: relative;
+    font-weight: normal;
+    margin: 0px;
+    background: none;
+    line-height: 1.2em;
+    letter-spacing: -0.02em;
+    font-family: 'Cairo', 'Tajawal', 'Amiri', 'Scheherazade', sans-serif !important; 
 }
+
 
 textarea{
 	overflow:hidden;
@@ -133,6 +134,8 @@ p{
 	line-height: 1.6em;
 	font-weight: 400;
 	color: #000000;
+    font-family: 'Cairo', 'Tajawal', 'Amiri', 'Scheherazade', sans-serif !important; 
+
 }
 
 .text{
@@ -141,6 +144,8 @@ p{
 	font-weight: 400;
 	color: #000000;
 	margin: 0;
+    font-family: 'Cairo', 'Tajawal', 'Amiri', 'Scheherazade', sans-serif !important; 
+
 }
 
 ::-webkit-input-placeholder{color: inherit;}
@@ -212,7 +217,8 @@ ul,li{
 	background: none;
 	border:1px solid #aaaaaa;
 	text-transform: capitalize;
-	font-family: 'Cairo', sans-serif;
+	    font-family: 'Cairo', 'Tajawal', 'Amiri', 'Scheherazade', sans-serif !important; 
+
 }
 
 .btn-style-one .txt{

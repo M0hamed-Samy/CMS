@@ -16,11 +16,11 @@
         <!--Page Title-->
         <section class="page-title" style="background-image:url(images/background/7.jpg);">
             <div class="auto-container">
-                <h1>Dr. Detail For MediTech</h1>
+                <h1>عن الدكتور</h1>
                 <div class="text">What We Actually Do?</div>
                 <ul class="bread-crumb clearfix">
-                    <li><a href="index.html"><span class="fas fa-home"></span> Home </a></li>
-                    <li>Doctor Detail</li>
+                    <li><a href="{{ url('/') }}"><span class="fas fa-home"></span> الرئيسية </a></li>
+                    <li>معلومات حول الدكتور عبد العال دياب</li>
                 </ul>
             </div>
         </section>
@@ -36,8 +36,8 @@
                         <div class="detail-column col-lg-8 col-md-12 col-sm-12">
                             <div class="inner-box">
                                 <div class="info-header">
-                                    <p>Provide Comprehensive Quality Care</p>
-                                    <h3>I‘m Dr. Johan Doe</h3>
+                                    <p>استشارى الجراحة التجميلية</p>
+                                    <h3>دكتور عبد العال دياب</h3>
                                     <span class="designation">Neurosurgeon</span>
                                 </div>
                                 <ul class="info-list" style="padding: 0; margin: 0; list-style: none;">
@@ -150,8 +150,8 @@
                                 <ul class="contact-list">
                                     <li><span>هاتف: </span> 010 08422674</li>
                                     <li class="clearfix">
-                                        <a href="#" class="clearfix theme-btn btn-style-two"><span
-                                                class="txt btn-txt">On Vacation</span></a>
+                                        <a href="/contact" class="clearfix theme-btn btn-style-two"><span
+                                                class="txt btn-txt">احجز الان</span></a>
                                     </li>
                                 </ul>
 
@@ -172,8 +172,7 @@
                                         <li>الخميس الاسماعيلية <span>6.00 - 10.00</span></li>
                                         <li>الاربع - الجمعة في القاهرة <span>2.00 - 6.00</span></li>
                                     </ul>
-                                    <a href="#" class="theme-btn doctor-btn"><i class="fa fa-user-md"></i> See
-                                        Doctors Time Table</a>
+                                    <a href="/contact" class="theme-btn doctor-btn"><i class="fa fa-user-md"></i> احجز الان</a>
                                 </div>
                             </div>
                         </div>

@@ -35,7 +35,7 @@
 											@endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="#">فيدوهات</a></li>
+                                    <li><a href="/videos">فيدوهات</a></li>
 
 									<li ><a href="/doctor">عن الدكتور</a>
                                         

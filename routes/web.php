@@ -5,6 +5,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\SendSms;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Foundation\Bootstrap\SetRequestForConsole;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,8 @@ Route::get('/', function () {
     return view('user.index',compact('services'))->name('home');
 });
 
+// Route::get('/sendsms',[SendSms::class,'send']);
+
 
 
 
@@ -49,7 +52,9 @@ Route::get('/', function () {
 Route::get('/',[ServiceController::class, 'index'])->name('home');
 Route::get('/services/{service}', [ServiceController::class, 'show'])->name('services.show');
 
-
+Route::get('/contact', function () {
+    return view('contacts.index');
+})->name('contact');
 Route::get('/blogs', [\App\Http\Controllers\BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blogs/{blog}', [\App\Http\Controllers\BlogController::class, 'show'])->name('blog.details');
 

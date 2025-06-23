@@ -36,11 +36,11 @@
         <!--Page Title-->
         <section class="page-title" style="background-image:url(images/background/7.jpg);">
             <div class="auto-container">
-                <h1>Gallery of MediTech</h1>
-                <div class="text">What We Actually Do?</div>
+                <h1>احدث الفيدوهات</h1>
+                <div class="text">ماذا نستطيع ان نفعل حقا</div>
                 <ul class="bread-crumb clearfix">
-                    <li><a href="index.html"><span class="fas fa-home"></span> Home </a></li>
-                    <li>Gallery</li>
+                    <li><a href="{{ url('/') }}"><span class="fas fa-home"></span> الرئيسية </a></li>
+                    <li>احدث الفيديوهات</li>
                 </ul>
             </div>
         </section>
@@ -99,8 +99,8 @@
 
                 <!-- View All Button -->
                 <div class="btn-box text-center">
-                    <a href="{{ route('videos.index') }}" class="theme-btn btn-style-two">
-                        <span class="txt"><i class="fas fa-user-md"></i> &ensp; View All</span>
+                    <a href="{{ url('/contact') }}" class="theme-btn btn-style-two">
+                        <span class="txt"><i class="fas fa-user-md"></i> &ensp; احجز الان</span>
                     </a>
                 </div>
 

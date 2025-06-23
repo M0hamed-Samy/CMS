@@ -17,22 +17,26 @@
                 <!-- Swiper -->
                 <div class="swiper-wrapper">
 
-                    <section class="swiper-slide slide" style="background-image: url('{{ asset('images/main-slider/1.jpg') }}');">
+                    <section class="swiper-slide slide"
+                        style="background-image: url('{{ asset('images/main-slider/1.jpg') }}');">
 
                         <div class="auto-container">
                             <div class="content clearfix">
-                                <div class="title" style="color:whitesmoke !important">مرحبًا بكم في عيادة الدكتور دياب
+                                <div class="title"
+                                    style="color:whitesmoke !important; font-family: 'Cairo', 'Tajawal', 'Amiri', 'Scheherazade', sans-serif;">
+                                    <h2>دكتور عبد العال دياب</h2>
+
                                 </div>
-                                <h2>حيث نعيد لك الثقة والجمال بأعلى معايير الخبرة والرعاية.</h2>
-                                <div class="text" style="color:whitesmoke !important">بقيادة استشاري أول في جراحة
-                                    التجميل، الجلد نحن هنا لخدمتك بأحدث تقنيات تجميل الوجه، تصحيح الأنف، معالجة أمراض
-                                    الجلد والجروح، وحتى إدارة السمنة.</div>
+
+                                <div class="text" style="color:whitesmoke !important"> استشارى جراحات التجميل وعلاج
+                                    اثار الحروق والجروح المزمنة والعيوب الخلقية وتشوهات القوام</div>
+
                                 <div class="btn-box clearfix">
-                                    <a href="/services" class="theme-btn btn-style-two"><span
-                                            class="txt">خدماتنا</span></a>
+
                                     <a href="https://wa.me/201008422674" class="theme-btn phone-btn" target="_blank">
-                                        <span class="icon flaticon-call"></span>010 08422674
+                                        <span class="icon fab fa-whatsapp" style="color: #25D366;"></span> 010 08422674
                                     </a>
+
 
                                 </div>
                             </div>
@@ -61,28 +65,31 @@
                 </div>
 
                 <div class="services-carousel owl-carousel owl-theme">
+                        @foreach ($services as $service)
 
                     <!-- Department Block -->
-                    @foreach ($services as $service)
-                        <div class="department-block">
-                            <div class="inner-box">
-                                <div class="upper-box">
-                                    <div class="icon">
-                                        <img src="{{ asset('storage/' . $service->icon) }}" alt="Service Icon"
-                                            alt="Cosmetic Surgery Icon" style="width:60px; height:60px;">
+                    <div id="services-section">
+                            <div class="department-block">
+                                <div class="inner-box">
+                                    <div class="upper-box">
+                                        <div class="icon">
+                                            <img src="{{ asset('storage/' . $service->icon) }}" alt="Service Icon"
+                                                style="width:60px; height:60px;">
+                                        </div>
+                                        <h3><a href="#">{{ $service->main_title }}</a></h3>
                                     </div>
-                                    <h3><a href="#">{{ $service->main_title }}</a></h3>
-                                </div>
-                                <div class="text">
-                                    {{ $service->main_description }}
-                                </div>
-                                <div class="read-outer">
-                                    <a href="{{ url('/services/'.$service->id) }}" class="read-more">اقرأ المزيد <span
-                                            class="icon fas fa-angle-double-right"></span></a>
+                                    <div class="text">
+                                        {{ $service->main_description }}
+                                    </div>
+                                    <div class="read-outer">
+                                        <a href="{{ url('/services/' . $service->id) }}" class="read-more">اقرأ المزيد
+                                            <span class="icon fas fa-angle-double-right"></span></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                        @endforeach
+
 
 
 
@@ -116,13 +123,13 @@
                             <p> (FRCS) زميل كلية الجراحين الملكية ببريطانيا</p>
                             <p>حاصل على ماجستير الجراحة من كلية الطب – جامعة عين شمس</p>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
         </section>
 
-        
+
 
         <!-- Counter Section -->
         <section class="counter-section" style="background-image: url(images/background/pattern-3.png)">
@@ -132,7 +139,7 @@
                 <div class="fact-counter">
                     <div class="row clearfix">
 
-                       
+
 
                         <!--Column-->
                         <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
@@ -158,7 +165,7 @@
                             </div>
                         </div>
 
-                        
+
 
                     </div>
                 </div>
@@ -167,135 +174,14 @@
         </section>
         <!-- End Counter Section -->
 
-        <!-- Team Section -->
-        <section class="team-section">
-            <div class="auto-container">
 
-                <!-- Sec Title -->
-                <div class="sec-title centered">
-                    <h2>The Medical Specialists</h2>
-                    <div class="separator"></div>
-                </div>
-
-                <div class="row clearfix">
-
-                    <!-- Team Block -->
-                    <div class="team-block col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div class="image">
-                                <img src="images/resource/team-1.jpg" alt="" />
-                                <div class="overlay-box">
-                                    <ul class="social-icons">
-                                        <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-google"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                                    </ul>
-                                    <a href="#" class="appointment">Make Appointment</a>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h3><a href="#">Dr. Andria Jonea</a></h3>
-                                <div class="designation">Cancer Specialist</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team Block -->
-                    <div class="team-block col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="inner-box wow fadeInUp" data-wow-delay="250ms" data-wow-duration="1500ms">
-                            <div class="image">
-                                <img src="images/resource/team-2.jpg" alt="" />
-                                <div class="overlay-box">
-                                    <ul class="social-icons">
-                                        <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-google"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                                    </ul>
-                                    <a href="#" class="appointment">Make Appointment</a>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h3><a href="#">Dr. Robet Samith</a></h3>
-                                <div class="designation">Heart Surgen</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team Block -->
-                    <div class="team-block col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="inner-box wow fadeInUp" data-wow-delay="500ms" data-wow-duration="1500ms">
-                            <div class="image">
-                                <img src="images/resource/team-3.jpg" alt="" />
-                                <div class="overlay-box">
-                                    <ul class="social-icons">
-                                        <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-google"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                                    </ul>
-                                    <a href="#" class="appointment">Make Appointment</a>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h3><a href="#">Dr. Sharon Laura</a></h3>
-                                <div class="designation">Family Physician</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team Block -->
-                    <div class="team-block col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                        <div class="inner-box wow fadeInUp" data-wow-delay="750ms" data-wow-duration="1500ms">
-                            <div class="image">
-                                <img src="images/resource/team-4.jpg" alt="" />
-                                <div class="overlay-box">
-                                    <ul class="social-icons">
-                                        <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-google"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-skype"></span></a></li>
-                                        <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
-                                    </ul>
-                                    <a href="#" class="appointment">Make Appointment</a>
-                                </div>
-                            </div>
-                            <div class="lower-content">
-                                <h3><a href="#">Dr. Alex Furgosen</a></h3>
-                                <div class="designation">Ortho Specialist</div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-        <!-- End Team Section -->
 
         <!-- FullWidth Section -->
         <section class="fullwidth-section">
             <div class="outer-container">
                 <div class="clearfix">
 
-                    <!-- Left Column -->
-                    <div class="left-column" style="background-image: url(images/background/1.jpg)">
-                        <div class="inner-column clearfix">
-                            <div class="content">
-                                <div class="icon-box">
-                                    <span class="icon flaticon-contract-1"></span>
-                                </div>
-                                <div class="title">Need a Doctor for Check-up?</div>
-                                <h2>JUST MAKE AN APPOINTMENT</h2>
-                                <a href="contact.html" class="theme-btn btn-style-two"><span class="txt"> احجز
-                                        زيارة</span></a>
-                            </div>
-                        </div>
-                    </div>
+                   
 
                     <!-- Right Column -->
                     <div class="right-column">
@@ -304,15 +190,15 @@
                             <!-- Upper Box -->
                             <div class="upper-box">
                                 <div class="icon flaticon-alarm-clock"></div>
-                                <h3>Opening Hours</h3>
+                                <h3>ساعات العمل</h3>
                             </div>
                             <ul class="time-list">
-                                <li class="clearfix"><span class="left-span pull-left">Monday - Friday</span><span
-                                        class="right-span pull-right">08:00am - 10:00pm</span></li>
-                                <li class="clearfix"><span class="left-span pull-left">Saturday - Sunday</span><span
-                                        class="right-span pull-right">09:00am - 06:00pm</span></li>
-                                <li class="clearfix"><span class="left-span pull-left">Emergency Services</span><span
-                                        class="right-span pull-right">24 hours Open</span></li>
+                                <li class="clearfix"><span class="left-span pull-left">السبت الى الخميس (ما عادا الاربعاء)</span><span
+                                        class="right-span pull-right">06:00am - 10:00pm</span></li>
+
+                                <li class="clearfix"><span class="left-span pull-left">الجمعة - الاربعاء</span><span
+                                        class="right-span pull-right">02:00am - 06:00pm</span></li>
+                                
                             </ul>
 
                         </div>
@@ -340,7 +226,8 @@
                         <div class="testimonial-block">
                             <div class="inner-box">
                                 <div class="quote-icon flaticon-quote"></div>
-                                <div class="text">تسلم ايديك ي دكتور ربنا يباركلك بجد العمليه ملهاش اي اثر خالص و بصراحه انت كنت خايف منها بس حضرتك طمنتي و الحمدالله اني وقعت تحت ايديك ♥️♥️</div>
+                                <div class="text">تسلم ايديك ي دكتور ربنا يباركلك بجد العمليه ملهاش اي اثر خالص و
+                                    بصراحه انت كنت خايف منها بس حضرتك طمنتي و الحمدالله اني وقعت تحت ايديك ♥️♥️</div>
                             </div>
                         </div>
 
@@ -348,7 +235,8 @@
                         <div class="testimonial-block">
                             <div class="inner-box">
                                 <div class="quote-icon flaticon-quote"></div>
-                                <div class="text">ربنا يباركلك يا دكتور من افضل الدكاتره اللي ممكن اي حد يتعامل معاهم ما شاء الله ♥️
+                                <div class="text">ربنا يباركلك يا دكتور من افضل الدكاتره اللي ممكن اي حد يتعامل معاهم
+                                    ما شاء الله ♥️
                                 </div>
                             </div>
                         </div>
@@ -358,13 +246,16 @@
                             <div class="inner-box">
                                 <div class="quote-icon flaticon-quote"></div>
                                 <div class="text">السلام عليكم ورحمه الله وبركاتة
-                                    انا بشكر الدكتور الذوق الخلوق عبد العال دياب على إجرائة لى عملية الفتاق وشد العضلات والبطن وعلى متابعتة وعدم تقصيرة في اى شيئ  وعلى أسلوبه المتواضع فى المعاملة .. وبشكر كل فريق العمل بمستشفى الدكتور عاطف نور الدين على مراعتهم وزوقهم خاصتا الأستاذة ايمان .. جزاك الله كل الخير يا سيدي الفاضل دكتور عبد العال دياب
-                                   
+                                    انا بشكر الدكتور الذوق الخلوق عبد العال دياب على إجرائة لى عملية الفتاق وشد العضلات
+                                    والبطن وعلى متابعتة وعدم تقصيرة في اى شيئ وعلى أسلوبه المتواضع فى المعاملة .. وبشكر
+                                    كل فريق العمل بمستشفى الدكتور عاطف نور الدين على مراعتهم وزوقهم خاصتا الأستاذة ايمان
+                                    .. جزاك الله كل الخير يا سيدي الفاضل دكتور عبد العال دياب
+
                                 </div>
                             </div>
                         </div>
 
-                        
+
 
                     </div>
 
@@ -395,8 +286,8 @@
                                     <div class="designation">Cairo</div>
                                 </div>
                             </div>
-                           
-                            
+
+
                         </div>
                     </div>
 
@@ -411,85 +302,50 @@
             <div class="auto-container">
                 <!-- Sec Title -->
                 <div class="sec-title centered">
-                    <h2>Latest News & Articals</h2>
+                    <h2>احدث الخدمات</h2>
                     <div class="separator style-three"></div>
                 </div>
+
                 <div class="row clearfix">
-
-                    <!-- News Block -->
-                    <div class="news-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div class="image">
-                                <div class="category">Artical</div>
-                                <a href="blog-detail.html"><img src="images/resource/news-1.jpg"
-                                        alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <ul class="post-meta">
-                                    <li><a href="#">03 Comments</a></li>
-                                    <li><a href="#">June 21, 2018 at 8:12pm</a></li>
-                                    <li><a href="#">12 Liks</a></li>
-                                </ul>
-                                <h3><a href="blog-detail.html">Diagnostic Services for Efficient Results Picking Right
-                                    </a></h3>
-                                <div class="text">There are a lot of women that are unaware of the numerous risks
-                                    associated with their health and eventually ignore the ...</div>
-                                <a href="blog-detail.html" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- News Block -->
-                    <div class="news-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-                            <div class="image">
-                                <div class="category">Artical</div>
-                                <a href="blog-detail.html"><img src="images/resource/news-2.jpg"
-                                        alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <ul class="post-meta">
-                                    <li><a href="#">03 Comments</a></li>
-                                    <li><a href="#">June 21, 2018 at 8:12pm</a></li>
-                                    <li><a href="#">12 Liks</a></li>
-                                </ul>
-                                <h3><a href="blog-detail.html">Reasons to Visit for Heart Specialist Us</a></h3>
-                                <div class="text">There are a lot of women that are unaware of the numerous risks
-                                    associated with their health and eventually ignore the ...</div>
-                                <a href="blog-detail.html" class="read-more">Read More</a>
+                    @foreach ($services->take(4) as $service)
+                        <div class="news-block col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <div class="image">
+                                    <div class="category">Service</div>
+                                    <a href="{{ url('/services/' . $service->id) }}">
+                                        <img src="{{ asset('storage/' . $service->title_image) }}"
+                                            alt="{{ $service->main_title }}" />
+                                    </a>
+                                </div>
+                                <div class="lower-content">
+                                    <ul class="post-meta">
+                                        <li><a href="#">03 Comments</a></li>
+                                        <!-- You can make this dynamic later -->
+                                        <li><a href="#">Published:
+                                                {{ $service->created_at->format('F d, Y') }}</a></li>
+                                        <li><a href="#">12 Likes</a></li>
+                                        <!-- You can make this dynamic later -->
+                                    </ul>
+                                    <h3>
+                                        <a href="{{ url('/services/' . $service->id) }}">
+                                            {{ $service->main_title }}
+                                        </a>
+                                    </h3>
+                                    <div class="text">
+                                        {{ \Illuminate\Support\Str::limit($service->main_description, 100) }}
+                                    </div>
+                                    <a href="{{ url('/services/' . $service->id) }}" class="read-more">اقرأ
+                                        المزيد</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- News Block -->
-                    <div class="news-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-                            <div class="image">
-                                <div class="category">Artical</div>
-                                <a href="blog-detail.html"><img src="images/resource/news-3.jpg"
-                                        alt="" /></a>
-                            </div>
-                            <div class="lower-content">
-                                <ul class="post-meta">
-                                    <li><a href="#">03 Comments</a></li>
-                                    <li><a href="#">June 21, 2018 at 8:12pm</a></li>
-                                    <li><a href="#">12 Liks</a></li>
-                                </ul>
-                                <h3><a href="blog-detail.html">Preparing for an ECG Tips From Our Diagnosticians</a>
-                                </h3>
-                                <div class="text">There are a lot of women that are unaware of the numerous risks
-                                    associated with their health and eventually ignore the ...</div>
-                                <a href="blog-detail.html" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </section>
-        <!-- End News Section -->
 
-    
+
+
 
         <x-nav-footer></x-nav-footer>
 
@@ -545,7 +401,7 @@
             </div>
         </div>
 
-        
+
     </div>
 
     <!--Scroll to top-->
